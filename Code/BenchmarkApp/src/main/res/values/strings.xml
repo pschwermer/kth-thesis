@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">BenchmarkApplication</string>
+
+    <string-array name="SpinnerBenchmarkArray">
+        <item>Fasta</item>
+        <item>Fannkuch-Redux</item>
+        <item>N-body</item>
+        <item>Reverse-Complement</item>
+    </string-array>
+
+    <string-array name="SpinnerImplementationArray">
+        <item>Java</item>
+        <item>Kotlin converted</item>
+        <item>Kotlin idiomatic</item>
+    </string-array>
+
+    <string-array name="SpinnerMetricArray">
+        <item>Boxing of primitives</item>
+        <item>Garbage collection</item>
+        <item>Memory consumption</item>
+        <item>Runtime</item>
+    </string-array>
+</resources>
