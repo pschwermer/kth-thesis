@@ -1,0 +1,1615 @@
+.class public final Lcom/benchmarks/patrik/benchmarks/kotlinConverted/Fasta;
+.super Ljava/lang/Object;
+.source "Fasta.kt"
+
+
+# annotations
+.annotation system Ldalvik/annotation/MemberClasses;
+    value = {
+        Lcom/benchmarks/patrik/benchmarks/kotlinConverted/Fasta$FloatProbFreq;
+    }
+.end annotation
+
+.annotation system Ldalvik/annotation/SourceDebugExtension;
+    value = "SMAP\nFasta.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Fasta.kt\ncom/benchmarks/patrik/benchmarks/kotlinConverted/Fasta\n*L\n1#1,192:1\n*E\n"
+.end annotation
+
+.annotation runtime Lkotlin/Metadata;
+    bv = {
+        0x1,
+        0x0,
+        0x2
+    }
+    d1 = {
+        "\u0000<\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\u0008\u0002\n\u0002\u0010\u000e\n\u0002\u0008\u0005\n\u0002\u0010\u0008\n\u0002\u0008\u0003\n\u0002\u0018\u0002\n\u0002\u0008\u0004\n\u0002\u0010\u0002\n\u0002\u0008\u0005\n\u0002\u0018\u0002\n\u0002\u0008\u0004\n\u0002\u0010\u0011\n\u0002\u0008\u0003\u0018\u00002\u00020\u0001:\u0001 B\u0005\u00a2\u0006\u0002\u0010\u0002J0\u0010\u0012\u001a\u00020\u00132\u0006\u0010\u0014\u001a\u00020\u00042\u0006\u0010\u0015\u001a\u00020\u00042\u0006\u0010\u0016\u001a\u00020\u000e2\u0006\u0010\u0017\u001a\u00020\n2\u0006\u0010\u0018\u001a\u00020\u0019H\u0007J0\u0010\u001a\u001a\u00020\u00132\u0006\u0010\u0014\u001a\u00020\u00042\u0006\u0010\u0015\u001a\u00020\u00042\u0006\u0010\u001b\u001a\u00020\u00042\u0006\u0010\u0017\u001a\u00020\n2\u0006\u0010\u0018\u001a\u00020\u0019H\u0007J\u001b\u0010\u001c\u001a\u00020\u00132\u000c\u0010\u001d\u001a\u0008\u0012\u0004\u0012\u00020\u00040\u001eH\u0007\u00a2\u0006\u0002\u0010\u001fR\u001a\u0010\u0003\u001a\u00020\u0004X\u0086\u000e\u00a2\u0006\u000e\n\u0000\u001a\u0004\u0008\u0005\u0010\u0006\"\u0004\u0008\u0007\u0010\u0008R\u0014\u0010\t\u001a\u00020\nX\u0086D\u00a2\u0006\u0008\n\u0000\u001a\u0004\u0008\u000b\u0010\u000cR\u000e\u0010\r\u001a\u00020\u000eX\u0082\u0004\u00a2\u0006\u0002\n\u0000R\u000e\u0010\u000f\u001a\u00020\u000eX\u0082\u0004\u00a2\u0006\u0002\n\u0000R\u0014\u0010\u0010\u001a\u00020\nX\u0086D\u00a2\u0006\u0008\n\u0000\u001a\u0004\u0008\u0011\u0010\u000c\u00a8\u0006!"
+    }
+    d2 = {
+        "Lcom/benchmarks/patrik/benchmarks/kotlinConverted/Fasta;",
+        "",
+        "()V",
+        "ALU",
+        "",
+        "getALU",
+        "()Ljava/lang/String;",
+        "setALU",
+        "(Ljava/lang/String;)V",
+        "BUFFER_SIZE",
+        "",
+        "getBUFFER_SIZE",
+        "()I",
+        "HOMO_SAPIENS",
+        "Lcom/benchmarks/patrik/benchmarks/kotlinConverted/Fasta$FloatProbFreq;",
+        "IUB",
+        "LINE_LENGTH",
+        "getLINE_LENGTH",
+        "makeRandomFasta",
+        "",
+        "id",
+        "desc",
+        "fpf",
+        "nChars",
+        "writer",
+        "Ljava/io/OutputStream;",
+        "makeRepeatFasta",
+        "alu",
+        "runBenchmark",
+        "args",
+        "",
+        "([Ljava/lang/String;)V",
+        "FloatProbFreq",
+        "app_debug"
+    }
+    k = 0x1
+    mv = {
+        0x1,
+        0x1,
+        0x9
+    }
+.end annotation
+
+
+# instance fields
+.field private ALU:Ljava/lang/String;
+    .annotation build Lorg/jetbrains/annotations/NotNull;
+    .end annotation
+.end field
+
+.field private final BUFFER_SIZE:I
+
+.field private final HOMO_SAPIENS:Lcom/benchmarks/patrik/benchmarks/kotlinConverted/Fasta$FloatProbFreq;
+
+.field private final IUB:Lcom/benchmarks/patrik/benchmarks/kotlinConverted/Fasta$FloatProbFreq;
+
+.field private final LINE_LENGTH:I
+
+
+# direct methods
+.method public constructor <init>()V
+    .registers 10
+
+    .prologue
+    const/4 v8, 0x3
+
+    const/4 v7, 0x2
+
+    const/4 v6, 0x1
+
+    const/4 v5, 0x0
+
+    const/4 v4, 0x4
+
+    .line 15
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 16
+    const/16 v0, 0x3c
+
+    iput v0, p0, Lcom/benchmarks/patrik/benchmarks/kotlinConverted/Fasta;->LINE_LENGTH:I
+
+    .line 17
+    iget v0, p0, Lcom/benchmarks/patrik/benchmarks/kotlinConverted/Fasta;->LINE_LENGTH:I
+
+    add-int/lit8 v0, v0, 0x1
+
+    mul-int/lit16 v0, v0, 0x400
+
+    iput v0, p0, Lcom/benchmarks/patrik/benchmarks/kotlinConverted/Fasta;->BUFFER_SIZE:I
+
+    .line 20
+    const-string/jumbo v0, "GGCCGGGCGCGGTGGCTCACGCCTGTAATCCCAGCACTTTGGGAGGCCGAGGCGGGCGGATCACCTGAGGTCAGGAGTTCGAGACCAGCCTGGCCAACATGGTGAAACCCCGTCTCTACTAAAAATACAAAAATTAGCCGGGCGTGGTGGCGCGCGCCTGTAATCCCAGCTACTCGGGAGGCTGAGGCAGGAGAATCGCTTGAACCCGGGAGGCGGAGGTTGCAGTGAGCCGAGATCGCGCCACTGCACTCCAGCCTGGGCGACAGAGCGAGACTCCGTCTCAAAAA"
+
+    iput-object v0, p0, Lcom/benchmarks/patrik/benchmarks/kotlinConverted/Fasta;->ALU:Ljava/lang/String;
+
+    .line 29
+    new-instance v0, Lcom/benchmarks/patrik/benchmarks/kotlinConverted/Fasta$FloatProbFreq;
+
+    .line 30
+    const/16 v1, 0xf
+
+    new-array v1, v1, [B
+
+    const/16 v2, 0x61
+
+    int-to-byte v2, v2
+
+    aput-byte v2, v1, v5
+
+    const/16 v2, 0x63
+
+    int-to-byte v2, v2
+
+    aput-byte v2, v1, v6
+
+    const/16 v2, 0x67
+
+    int-to-byte v2, v2
+
+    aput-byte v2, v1, v7
+
+    const/16 v2, 0x74
+
+    int-to-byte v2, v2
+
+    aput-byte v2, v1, v8
+
+    const/16 v2, 0x42
+
+    int-to-byte v2, v2
+
+    aput-byte v2, v1, v4
+
+    const/4 v2, 0x5
+
+    const/16 v3, 0x44
+
+    int-to-byte v3, v3
+
+    aput-byte v3, v1, v2
+
+    const/4 v2, 0x6
+
+    const/16 v3, 0x48
+
+    int-to-byte v3, v3
+
+    aput-byte v3, v1, v2
+
+    const/4 v2, 0x7
+
+    const/16 v3, 0x4b
+
+    int-to-byte v3, v3
+
+    aput-byte v3, v1, v2
+
+    const/16 v2, 0x8
+
+    const/16 v3, 0x4d
+
+    int-to-byte v3, v3
+
+    aput-byte v3, v1, v2
+
+    const/16 v2, 0x9
+
+    const/16 v3, 0x4e
+
+    int-to-byte v3, v3
+
+    aput-byte v3, v1, v2
+
+    const/16 v2, 0xa
+
+    const/16 v3, 0x52
+
+    int-to-byte v3, v3
+
+    aput-byte v3, v1, v2
+
+    const/16 v2, 0xb
+
+    const/16 v3, 0x53
+
+    int-to-byte v3, v3
+
+    aput-byte v3, v1, v2
+
+    const/16 v2, 0xc
+
+    const/16 v3, 0x56
+
+    int-to-byte v3, v3
+
+    aput-byte v3, v1, v2
+
+    const/16 v2, 0xd
+
+    const/16 v3, 0x57
+
+    int-to-byte v3, v3
+
+    aput-byte v3, v1, v2
+
+    const/16 v2, 0xe
+
+    const/16 v3, 0x59
+
+    int-to-byte v3, v3
+
+    aput-byte v3, v1, v2
+
+    .line 31
+    const/16 v2, 0xf
+
+    new-array v2, v2, [D
+
+    fill-array-data v2, :array_aa
+
+    .line 29
+    invoke-direct {v0, v1, v2}, Lcom/benchmarks/patrik/benchmarks/kotlinConverted/Fasta$FloatProbFreq;-><init>([B[D)V
+
+    iput-object v0, p0, Lcom/benchmarks/patrik/benchmarks/kotlinConverted/Fasta;->IUB:Lcom/benchmarks/patrik/benchmarks/kotlinConverted/Fasta$FloatProbFreq;
+
+    .line 34
+    new-instance v0, Lcom/benchmarks/patrik/benchmarks/kotlinConverted/Fasta$FloatProbFreq;
+
+    .line 35
+    new-array v1, v4, [B
+
+    const/16 v2, 0x61
+
+    int-to-byte v2, v2
+
+    aput-byte v2, v1, v5
+
+    const/16 v2, 0x63
+
+    int-to-byte v2, v2
+
+    aput-byte v2, v1, v6
+
+    const/16 v2, 0x67
+
+    int-to-byte v2, v2
+
+    aput-byte v2, v1, v7
+
+    const/16 v2, 0x74
+
+    int-to-byte v2, v2
+
+    aput-byte v2, v1, v8
+
+    .line 36
+    new-array v2, v4, [D
+
+    fill-array-data v2, :array_ea
+
+    .line 34
+    invoke-direct {v0, v1, v2}, Lcom/benchmarks/patrik/benchmarks/kotlinConverted/Fasta$FloatProbFreq;-><init>([B[D)V
+
+    iput-object v0, p0, Lcom/benchmarks/patrik/benchmarks/kotlinConverted/Fasta;->HOMO_SAPIENS:Lcom/benchmarks/patrik/benchmarks/kotlinConverted/Fasta$FloatProbFreq;
+
+    return-void
+
+    .line 31
+    :array_aa
+    .array-data 8
+        0x3fd147ae147ae148L    # 0.27
+        0x3fbeb851eb851eb8L    # 0.12
+        0x3fbeb851eb851eb8L    # 0.12
+        0x3fd147ae147ae148L    # 0.27
+        0x3f947ae147ae147bL    # 0.02
+        0x3f947ae147ae147bL    # 0.02
+        0x3f947ae147ae147bL    # 0.02
+        0x3f947ae147ae147bL    # 0.02
+        0x3f947ae147ae147bL    # 0.02
+        0x3f947ae147ae147bL    # 0.02
+        0x3f947ae147ae147bL    # 0.02
+        0x3f947ae147ae147bL    # 0.02
+        0x3f947ae147ae147bL    # 0.02
+        0x3f947ae147ae147bL    # 0.02
+        0x3f947ae147ae147bL    # 0.02
+    .end array-data
+
+    .line 36
+    :array_ea
+    .array-data 8
+        0x3fd3639d20baeb5bL    # 0.302954942668
+        0x3fc957ae3dcd561bL    # 0.1979883004921
+        0x3fc9493aeab6c2bfL    # 0.1975473066391
+        0x3fd34bee4b030838L    # 0.3015094502008
+    .end array-data
+.end method
+
+
+# virtual methods
+.method public final getALU()Ljava/lang/String;
+    .registers 2
+    .annotation build Lorg/jetbrains/annotations/NotNull;
+    .end annotation
+
+    .prologue
+    .line 20
+    iget-object v0, p0, Lcom/benchmarks/patrik/benchmarks/kotlinConverted/Fasta;->ALU:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+.method public final getBUFFER_SIZE()I
+    .registers 2
+
+    .prologue
+    .line 17
+    iget v0, p0, Lcom/benchmarks/patrik/benchmarks/kotlinConverted/Fasta;->BUFFER_SIZE:I
+
+    return v0
+.end method
+
+.method public final getLINE_LENGTH()I
+    .registers 2
+
+    .prologue
+    .line 16
+    iget v0, p0, Lcom/benchmarks/patrik/benchmarks/kotlinConverted/Fasta;->LINE_LENGTH:I
+
+    return v0
+.end method
+
+.method public final makeRandomFasta(Ljava/lang/String;Ljava/lang/String;Lcom/benchmarks/patrik/benchmarks/kotlinConverted/Fasta$FloatProbFreq;ILjava/io/OutputStream;)V
+    .registers 14
+    .param p1, "id"    # Ljava/lang/String;
+        .annotation build Lorg/jetbrains/annotations/NotNull;
+        .end annotation
+    .end param
+    .param p2, "desc"    # Ljava/lang/String;
+        .annotation build Lorg/jetbrains/annotations/NotNull;
+        .end annotation
+    .end param
+    .param p3, "fpf"    # Lcom/benchmarks/patrik/benchmarks/kotlinConverted/Fasta$FloatProbFreq;
+        .annotation build Lorg/jetbrains/annotations/NotNull;
+        .end annotation
+    .end param
+    .param p4, "nChars"    # I
+    .param p5, "writer"    # Ljava/io/OutputStream;
+        .annotation build Lorg/jetbrains/annotations/NotNull;
+        .end annotation
+    .end param
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
+    .prologue
+    const/4 v7, 0x0
+
+    const-string/jumbo v5, "id"
+
+    invoke-static {p1, v5}, Lkotlin/jvm/internal/Intrinsics;->checkParameterIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string/jumbo v5, "desc"
+
+    invoke-static {p2, v5}, Lkotlin/jvm/internal/Intrinsics;->checkParameterIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string/jumbo v5, "fpf"
+
+    invoke-static {p3, v5}, Lkotlin/jvm/internal/Intrinsics;->checkParameterIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string/jumbo v5, "writer"
+
+    invoke-static {p5, v5}, Lkotlin/jvm/internal/Intrinsics;->checkParameterIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 43
+    iget v5, p0, Lcom/benchmarks/patrik/benchmarks/kotlinConverted/Fasta;->BUFFER_SIZE:I
+
+    new-array v0, v5, [B
+
+    .line 45
+    .local v0, "buffer":[B
+    array-length v5, v0
+
+    iget v6, p0, Lcom/benchmarks/patrik/benchmarks/kotlinConverted/Fasta;->LINE_LENGTH:I
+
+    add-int/lit8 v6, v6, 0x1
+
+    rem-int/2addr v5, v6
+
+    if-eqz v5, :cond_30
+
+    .line 46
+    new-instance v5, Ljava/lang/IllegalStateException;
+
+    .line 47
+    const-string/jumbo v6, "buffer size must be a multiple of line length (including line break)"
+
+    .line 46
+    invoke-direct {v5, v6}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    check-cast v5, Ljava/lang/Throwable;
+
+    throw v5
+
+    .line 50
+    :cond_30
+    new-instance v5, Ljava/lang/StringBuilder;
+
+    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v6, ">"
+
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v5
+
+    invoke-virtual {v5, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v5
+
+    const-string/jumbo v6, " "
+
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v5
+
+    invoke-virtual {v5, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v5
+
+    const-string/jumbo v6, "\n"
+
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v5
+
+    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v4
+
+    .line 51
+    .local v4, "descStr":Ljava/lang/String;
+    sget-object v5, Lkotlin/text/Charsets;->UTF_8:Ljava/nio/charset/Charset;
+
+    if-nez v4, :cond_63
+
+    new-instance v5, Lkotlin/TypeCastException;
+
+    const-string/jumbo v6, "null cannot be cast to non-null type java.lang.String"
+
+    invoke-direct {v5, v6}, Lkotlin/TypeCastException;-><init>(Ljava/lang/String;)V
+
+    throw v5
+
+    :cond_63
+    invoke-virtual {v4, v5}, Ljava/lang/String;->getBytes(Ljava/nio/charset/Charset;)[B
+
+    move-result-object v5
+
+    const-string/jumbo v6, "(this as java.lang.String).getBytes(charset)"
+
+    invoke-static {v5, v6}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+
+    invoke-virtual {p5, v5}, Ljava/io/OutputStream;->write([B)V
+
+    .line 53
+    const/4 v1, 0x0
+
+    .line 54
+    .local v1, "bufferIndex":I
+    :goto_71
+    if-lez p4, :cond_91
+
+    .line 55
+    iget v5, p0, Lcom/benchmarks/patrik/benchmarks/kotlinConverted/Fasta;->LINE_LENGTH:I
+
+    if-lt p4, v5, :cond_8f
+
+    .line 57
+    iget v3, p0, Lcom/benchmarks/patrik/benchmarks/kotlinConverted/Fasta;->LINE_LENGTH:I
+
+    .line 60
+    .local v3, "chunkSize":I
+    :goto_79
+    iget v5, p0, Lcom/benchmarks/patrik/benchmarks/kotlinConverted/Fasta;->BUFFER_SIZE:I
+
+    if-ne v1, v5, :cond_81
+
+    .line 63
+    invoke-virtual {p5, v0, v7, v1}, Ljava/io/OutputStream;->write([BII)V
+
+    .line 64
+    const/4 v1, 0x0
+
+    .line 67
+    :cond_81
+    invoke-virtual {p3, v0, v1, v3}, Lcom/benchmarks/patrik/benchmarks/kotlinConverted/Fasta$FloatProbFreq;->selectRandomIntoBuffer([BII)I
+
+    move-result v1
+
+    .line 68
+    add-int/lit8 v2, v1, 0x1
+
+    .end local v1    # "bufferIndex":I
+    .local v2, "bufferIndex":I
+    const/16 v5, 0xa
+
+    int-to-byte v5, v5
+
+    aput-byte v5, v0, v1
+
+    .line 70
+    sub-int/2addr p4, v3
+
+    move v1, v2
+
+    .line 54
+    .end local v2    # "bufferIndex":I
+    .restart local v1    # "bufferIndex":I
+    goto :goto_71
+
+    .line 59
+    .end local v3    # "chunkSize":I
+    :cond_8f
+    move v3, p4
+
+    .restart local v3    # "chunkSize":I
+    goto :goto_79
+
+    .line 73
+    .end local v3    # "chunkSize":I
+    :cond_91
+    invoke-virtual {p5, v0, v7, v1}, Ljava/io/OutputStream;->write([BII)V
+
+    .line 74
+    return-void
+.end method
+
+.method public final makeRepeatFasta(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILjava/io/OutputStream;)V
+    .registers 18
+    .param p1, "id"    # Ljava/lang/String;
+        .annotation build Lorg/jetbrains/annotations/NotNull;
+        .end annotation
+    .end param
+    .param p2, "desc"    # Ljava/lang/String;
+        .annotation build Lorg/jetbrains/annotations/NotNull;
+        .end annotation
+    .end param
+    .param p3, "alu"    # Ljava/lang/String;
+        .annotation build Lorg/jetbrains/annotations/NotNull;
+        .end annotation
+    .end param
+    .param p4, "nChars"    # I
+    .param p5, "writer"    # Ljava/io/OutputStream;
+        .annotation build Lorg/jetbrains/annotations/NotNull;
+        .end annotation
+    .end param
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
+    .prologue
+    const-string/jumbo v10, "id"
+
+    invoke-static {p1, v10}, Lkotlin/jvm/internal/Intrinsics;->checkParameterIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string/jumbo v10, "desc"
+
+    invoke-static {p2, v10}, Lkotlin/jvm/internal/Intrinsics;->checkParameterIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string/jumbo v10, "alu"
+
+    invoke-static {p3, v10}, Lkotlin/jvm/internal/Intrinsics;->checkParameterIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string/jumbo v10, "writer"
+
+    move-object/from16 v0, p5
+
+    invoke-static {v0, v10}, Lkotlin/jvm/internal/Intrinsics;->checkParameterIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 81
+    sget-object v10, Lkotlin/text/Charsets;->UTF_8:Ljava/nio/charset/Charset;
+
+    invoke-virtual {p3, v10}, Ljava/lang/String;->getBytes(Ljava/nio/charset/Charset;)[B
+
+    move-result-object v1
+
+    const-string/jumbo v10, "(this as java.lang.String).getBytes(charset)"
+
+    invoke-static {v1, v10}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 82
+    .local v1, "aluBytes":[B
+    const/4 v2, 0x0
+
+    .line 84
+    .local v2, "aluIndex":I
+    iget v10, p0, Lcom/benchmarks/patrik/benchmarks/kotlinConverted/Fasta;->BUFFER_SIZE:I
+
+    new-array v4, v10, [B
+
+    .line 86
+    .local v4, "buffer":[B
+    array-length v10, v4
+
+    iget v11, p0, Lcom/benchmarks/patrik/benchmarks/kotlinConverted/Fasta;->LINE_LENGTH:I
+
+    add-int/lit8 v11, v11, 0x1
+
+    rem-int/2addr v10, v11
+
+    if-eqz v10, :cond_3e
+
+    .line 87
+    new-instance v10, Ljava/lang/IllegalStateException;
+
+    .line 88
+    const-string/jumbo v11, "buffer size must be a multiple of line length (including line break)"
+
+    .line 87
+    invoke-direct {v10, v11}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    check-cast v10, Ljava/lang/Throwable;
+
+    throw v10
+
+    .line 91
+    :cond_3e
+    new-instance v10, Ljava/lang/StringBuilder;
+
+    invoke-direct {v10}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v11, ">"
+
+    invoke-virtual {v10, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v10
+
+    invoke-virtual {v10, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v10
+
+    const-string/jumbo v11, " "
+
+    invoke-virtual {v10, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v10
+
+    invoke-virtual {v10, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v10
+
+    const-string/jumbo v11, "\n"
+
+    invoke-virtual {v10, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v10
+
+    invoke-virtual {v10}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v8
+
+    .line 92
+    .local v8, "descStr":Ljava/lang/String;
+    sget-object v10, Lkotlin/text/Charsets;->UTF_8:Ljava/nio/charset/Charset;
+
+    if-nez v8, :cond_71
+
+    new-instance v10, Lkotlin/TypeCastException;
+
+    const-string/jumbo v11, "null cannot be cast to non-null type java.lang.String"
+
+    invoke-direct {v10, v11}, Lkotlin/TypeCastException;-><init>(Ljava/lang/String;)V
+
+    throw v10
+
+    :cond_71
+    invoke-virtual {v8, v10}, Ljava/lang/String;->getBytes(Ljava/nio/charset/Charset;)[B
+
+    move-result-object v10
+
+    const-string/jumbo v11, "(this as java.lang.String).getBytes(charset)"
+
+    invoke-static {v10, v11}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+
+    move-object/from16 v0, p5
+
+    invoke-virtual {v0, v10}, Ljava/io/OutputStream;->write([B)V
+
+    .line 94
+    const/4 v5, 0x0
+
+    .line 95
+    .local v5, "bufferIndex":I
+    :goto_81
+    if-lez p4, :cond_b8
+
+    .line 96
+    iget v10, p0, Lcom/benchmarks/patrik/benchmarks/kotlinConverted/Fasta;->LINE_LENGTH:I
+
+    move/from16 v0, p4
+
+    if-lt v0, v10, :cond_ab
+
+    .line 98
+    iget v7, p0, Lcom/benchmarks/patrik/benchmarks/kotlinConverted/Fasta;->LINE_LENGTH:I
+
+    .line 101
+    .local v7, "chunkSize":I
+    :goto_8b
+    iget v10, p0, Lcom/benchmarks/patrik/benchmarks/kotlinConverted/Fasta;->BUFFER_SIZE:I
+
+    if-ne v5, v10, :cond_96
+
+    .line 104
+    const/4 v10, 0x0
+
+    move-object/from16 v0, p5
+
+    invoke-virtual {v0, v4, v10, v5}, Ljava/io/OutputStream;->write([BII)V
+
+    .line 105
+    const/4 v5, 0x0
+
+    .line 108
+    :cond_96
+    const/4 v9, 0x0
+
+    move v6, v5
+
+    .end local v5    # "bufferIndex":I
+    .local v6, "bufferIndex":I
+    :goto_98
+    if-ge v9, v7, :cond_ae
+
+    .line 109
+    array-length v10, v1
+
+    if-ne v2, v10, :cond_9e
+
+    .line 110
+    const/4 v2, 0x0
+
+    .line 113
+    :cond_9e
+    add-int/lit8 v5, v6, 0x1
+
+    .end local v6    # "bufferIndex":I
+    .restart local v5    # "bufferIndex":I
+    add-int/lit8 v3, v2, 0x1
+
+    .end local v2    # "aluIndex":I
+    .local v3, "aluIndex":I
+    aget-byte v10, v1, v2
+
+    aput-byte v10, v4, v6
+
+    .line 108
+    add-int/lit8 v9, v9, 0x1
+
+    .local v9, "i":I
+    move v6, v5
+
+    .end local v5    # "bufferIndex":I
+    .restart local v6    # "bufferIndex":I
+    move v2, v3
+
+    .end local v3    # "aluIndex":I
+    .restart local v2    # "aluIndex":I
+    goto :goto_98
+
+    .line 100
+    .end local v6    # "bufferIndex":I
+    .end local v7    # "chunkSize":I
+    .end local v9    # "i":I
+    .restart local v5    # "bufferIndex":I
+    :cond_ab
+    move/from16 v7, p4
+
+    .restart local v7    # "chunkSize":I
+    goto :goto_8b
+
+    .line 115
+    .end local v5    # "bufferIndex":I
+    .restart local v6    # "bufferIndex":I
+    :cond_ae
+    add-int/lit8 v5, v6, 0x1
+
+    .end local v6    # "bufferIndex":I
+    .restart local v5    # "bufferIndex":I
+    const/16 v10, 0xa
+
+    int-to-byte v10, v10
+
+    aput-byte v10, v4, v6
+
+    .line 117
+    sub-int p4, p4, v7
+
+    .line 95
+    goto :goto_81
+
+    .line 120
+    .end local v7    # "chunkSize":I
+    :cond_b8
+    const/4 v10, 0x0
+
+    move-object/from16 v0, p5
+
+    invoke-virtual {v0, v4, v10, v5}, Ljava/io/OutputStream;->write([BII)V
+
+    .line 121
+    return-void
+.end method
+
+.method public final runBenchmark([Ljava/lang/String;)V
+    .registers 10
+    .param p1, "args"    # [Ljava/lang/String;
+        .annotation build Lorg/jetbrains/annotations/NotNull;
+        .end annotation
+    .end param
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
+    .prologue
+    const-string/jumbo v0, "args"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkParameterIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 125
+    const/16 v6, 0x3e8
+
+    .local v6, "n":I
+    move-object v0, p1
+
+    .line 127
+    check-cast v0, [Ljava/lang/Object;
+
+    array-length v0, v0
+
+    if-lez v0, :cond_15
+
+    .line 128
+    const/4 v0, 0x0
+
+    aget-object v0, p1, v0
+
+    invoke-static {v0}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
+
+    move-result v6
+
+    .line 131
+    :cond_15
+    sget-object v7, Ljava/lang/System;->out:Ljava/io/PrintStream;
+
+    .line 132
+    .local v7, "out":Ljava/io/PrintStream;
+    const-string/jumbo v1, "ONE"
+
+    const-string/jumbo v2, "Homo sapiens alu"
+
+    iget-object v3, p0, Lcom/benchmarks/patrik/benchmarks/kotlinConverted/Fasta;->ALU:Ljava/lang/String;
+
+    mul-int/lit8 v4, v6, 0x2
+
+    const-string/jumbo v0, "out"
+
+    invoke-static {v7, v0}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+
+    move-object v5, v7
+
+    check-cast v5, Ljava/io/OutputStream;
+
+    move-object v0, p0
+
+    invoke-virtual/range {v0 .. v5}, Lcom/benchmarks/patrik/benchmarks/kotlinConverted/Fasta;->makeRepeatFasta(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILjava/io/OutputStream;)V
+
+    .line 133
+    const-string/jumbo v1, "TWO"
+
+    const-string/jumbo v2, "IUB ambiguity codes"
+
+    iget-object v3, p0, Lcom/benchmarks/patrik/benchmarks/kotlinConverted/Fasta;->IUB:Lcom/benchmarks/patrik/benchmarks/kotlinConverted/Fasta$FloatProbFreq;
+
+    mul-int/lit8 v4, v6, 0x3
+
+    move-object v5, v7
+
+    check-cast v5, Ljava/io/OutputStream;
+
+    move-object v0, p0
+
+    invoke-virtual/range {v0 .. v5}, Lcom/benchmarks/patrik/benchmarks/kotlinConverted/Fasta;->makeRandomFasta(Ljava/lang/String;Ljava/lang/String;Lcom/benchmarks/patrik/benchmarks/kotlinConverted/Fasta$FloatProbFreq;ILjava/io/OutputStream;)V
+
+    .line 134
+    const-string/jumbo v1, "THREE"
+
+    const-string/jumbo v2, "Homo sapiens frequency"
+
+    iget-object v3, p0, Lcom/benchmarks/patrik/benchmarks/kotlinConverted/Fasta;->HOMO_SAPIENS:Lcom/benchmarks/patrik/benchmarks/kotlinConverted/Fasta$FloatProbFreq;
+
+    mul-int/lit8 v4, v6, 0x5
+
+    move-object v5, v7
+
+    check-cast v5, Ljava/io/OutputStream;
+
+    move-object v0, p0
+
+    invoke-virtual/range {v0 .. v5}, Lcom/benchmarks/patrik/benchmarks/kotlinConverted/Fasta;->makeRandomFasta(Ljava/lang/String;Ljava/lang/String;Lcom/benchmarks/patrik/benchmarks/kotlinConverted/Fasta$FloatProbFreq;ILjava/io/OutputStream;)V
+
+    .line 135
+    invoke-virtual {v7}, Ljava/io/PrintStream;->close()V
+
+    .line 136
+    return-void
+.end method
+
+.method public final setALU(Ljava/lang/String;)V
+    .registers 3
+    .param p1, "<set-?>"    # Ljava/lang/String;
+        .annotation build Lorg/jetbrains/annotations/NotNull;
+        .end annotation
+    .end param
+
+    .prologue
+    const-string/jumbo v0, "<set-?>"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkParameterIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 20
+    iput-object p1, p0, Lcom/benchmarks/patrik/benchmarks/kotlinConverted/Fasta;->ALU:Ljava/lang/String;
+
+    return-void
+.end method
+
+.class public final Lcom/benchmarks/patrik/benchmarks/kotlinConverted/Fasta$FloatProbFreq$Companion;
+.super Ljava/lang/Object;
+.source "Fasta.kt"
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Lcom/benchmarks/patrik/benchmarks/kotlinConverted/Fasta$FloatProbFreq;
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x19
+    name = "Companion"
+.end annotation
+
+.annotation runtime Lkotlin/Metadata;
+    bv = {
+        0x1,
+        0x0,
+        0x2
+    }
+    d1 = {
+        "\u0000\u001c\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\u0008\u0002\n\u0002\u0010\u0008\n\u0002\u0008\u000b\n\u0002\u0010\u0007\n\u0002\u0008\u0002\u0008\u0086\u0003\u0018\u00002\u00020\u0001B\u0007\u0008\u0002\u00a2\u0006\u0002\u0010\u0002J\u000e\u0010\u000f\u001a\u00020\u00102\u0006\u0010\u0011\u001a\u00020\u0010R\u0014\u0010\u0003\u001a\u00020\u0004X\u0086D\u00a2\u0006\u0008\n\u0000\u001a\u0004\u0008\u0005\u0010\u0006R\u0014\u0010\u0007\u001a\u00020\u0004X\u0086D\u00a2\u0006\u0008\n\u0000\u001a\u0004\u0008\u0008\u0010\u0006R\u0014\u0010\t\u001a\u00020\u0004X\u0086D\u00a2\u0006\u0008\n\u0000\u001a\u0004\u0008\n\u0010\u0006R\u001a\u0010\u000b\u001a\u00020\u0004X\u0080\u000e\u00a2\u0006\u000e\n\u0000\u001a\u0004\u0008\u000c\u0010\u0006\"\u0004\u0008\r\u0010\u000e\u00a8\u0006\u0012"
+    }
+    d2 = {
+        "Lcom/benchmarks/patrik/benchmarks/kotlinConverted/Fasta$FloatProbFreq$Companion;",
+        "",
+        "()V",
+        "IA",
+        "",
+        "getIA",
+        "()I",
+        "IC",
+        "getIC",
+        "IM",
+        "getIM",
+        "last",
+        "getLast$app_debug",
+        "setLast$app_debug",
+        "(I)V",
+        "random",
+        "",
+        "max",
+        "app_debug"
+    }
+    k = 0x1
+    mv = {
+        0x1,
+        0x1,
+        0x9
+    }
+.end annotation
+
+
+# direct methods
+.method private constructor <init>()V
+    .registers 1
+
+    .prologue
+    .line 178
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
+
+.method public synthetic constructor <init>(Lkotlin/jvm/internal/DefaultConstructorMarker;)V
+    .registers 2
+    .param p1, "$constructor_marker"    # Lkotlin/jvm/internal/DefaultConstructorMarker;
+
+    .prologue
+    .line 178
+    invoke-direct {p0}, Lcom/benchmarks/patrik/benchmarks/kotlinConverted/Fasta$FloatProbFreq$Companion;-><init>()V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public final getIA()I
+    .registers 2
+
+    .prologue
+    .line 181
+    invoke-static {}, Lcom/benchmarks/patrik/benchmarks/kotlinConverted/Fasta$FloatProbFreq;->access$getIA$cp()I
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public final getIC()I
+    .registers 2
+
+    .prologue
+    .line 182
+    invoke-static {}, Lcom/benchmarks/patrik/benchmarks/kotlinConverted/Fasta$FloatProbFreq;->access$getIC$cp()I
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public final getIM()I
+    .registers 2
+
+    .prologue
+    .line 180
+    invoke-static {}, Lcom/benchmarks/patrik/benchmarks/kotlinConverted/Fasta$FloatProbFreq;->access$getIM$cp()I
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public final getLast$app_debug()I
+    .registers 2
+
+    .prologue
+    .line 179
+    invoke-static {}, Lcom/benchmarks/patrik/benchmarks/kotlinConverted/Fasta$FloatProbFreq;->access$getLast$cp()I
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public final random(F)F
+    .registers 6
+    .param p1, "max"    # F
+
+    .prologue
+    .line 186
+    const/high16 v2, 0x3f800000    # 1.0f
+
+    move-object v1, p0
+
+    check-cast v1, Lcom/benchmarks/patrik/benchmarks/kotlinConverted/Fasta$FloatProbFreq$Companion;
+
+    invoke-virtual {v1}, Lcom/benchmarks/patrik/benchmarks/kotlinConverted/Fasta$FloatProbFreq$Companion;->getIM()I
+
+    move-result v1
+
+    int-to-float v1, v1
+
+    div-float v0, v2, v1
+
+    .local v0, "oneOverIM":F
+    move-object v1, p0
+
+    .line 187
+    check-cast v1, Lcom/benchmarks/patrik/benchmarks/kotlinConverted/Fasta$FloatProbFreq$Companion;
+
+    move-object v2, p0
+
+    check-cast v2, Lcom/benchmarks/patrik/benchmarks/kotlinConverted/Fasta$FloatProbFreq$Companion;
+
+    invoke-virtual {v2}, Lcom/benchmarks/patrik/benchmarks/kotlinConverted/Fasta$FloatProbFreq$Companion;->getLast$app_debug()I
+
+    move-result v3
+
+    move-object v2, p0
+
+    check-cast v2, Lcom/benchmarks/patrik/benchmarks/kotlinConverted/Fasta$FloatProbFreq$Companion;
+
+    invoke-virtual {v2}, Lcom/benchmarks/patrik/benchmarks/kotlinConverted/Fasta$FloatProbFreq$Companion;->getIA()I
+
+    move-result v2
+
+    mul-int/2addr v3, v2
+
+    move-object v2, p0
+
+    check-cast v2, Lcom/benchmarks/patrik/benchmarks/kotlinConverted/Fasta$FloatProbFreq$Companion;
+
+    invoke-virtual {v2}, Lcom/benchmarks/patrik/benchmarks/kotlinConverted/Fasta$FloatProbFreq$Companion;->getIC()I
+
+    move-result v2
+
+    add-int/2addr v3, v2
+
+    move-object v2, p0
+
+    check-cast v2, Lcom/benchmarks/patrik/benchmarks/kotlinConverted/Fasta$FloatProbFreq$Companion;
+
+    invoke-virtual {v2}, Lcom/benchmarks/patrik/benchmarks/kotlinConverted/Fasta$FloatProbFreq$Companion;->getIM()I
+
+    move-result v2
+
+    rem-int v2, v3, v2
+
+    invoke-virtual {v1, v2}, Lcom/benchmarks/patrik/benchmarks/kotlinConverted/Fasta$FloatProbFreq$Companion;->setLast$app_debug(I)V
+
+    .line 188
+    check-cast p0, Lcom/benchmarks/patrik/benchmarks/kotlinConverted/Fasta$FloatProbFreq$Companion;
+
+    .end local p0    # "this":Lcom/benchmarks/patrik/benchmarks/kotlinConverted/Fasta$FloatProbFreq$Companion;
+    invoke-virtual {p0}, Lcom/benchmarks/patrik/benchmarks/kotlinConverted/Fasta$FloatProbFreq$Companion;->getLast$app_debug()I
+
+    move-result v1
+
+    int-to-float v1, v1
+
+    mul-float/2addr v1, p1
+
+    mul-float/2addr v1, v0
+
+    return v1
+.end method
+
+.method public final setLast$app_debug(I)V
+    .registers 2
+    .param p1, "<set-?>"    # I
+
+    .prologue
+    .line 179
+    invoke-static {p1}, Lcom/benchmarks/patrik/benchmarks/kotlinConverted/Fasta$FloatProbFreq;->access$setLast$cp(I)V
+
+    return-void
+.end method
+
+.class public final Lcom/benchmarks/patrik/benchmarks/kotlinConverted/Fasta$FloatProbFreq;
+.super Ljava/lang/Object;
+.source "Fasta.kt"
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Lcom/benchmarks/patrik/benchmarks/kotlinConverted/Fasta;
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x19
+    name = "FloatProbFreq"
+.end annotation
+
+.annotation system Ldalvik/annotation/MemberClasses;
+    value = {
+        Lcom/benchmarks/patrik/benchmarks/kotlinConverted/Fasta$FloatProbFreq$Companion;
+    }
+.end annotation
+
+.annotation runtime Lkotlin/Metadata;
+    bv = {
+        0x1,
+        0x0,
+        0x2
+    }
+    d1 = {
+        "\u0000.\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\u0012\n\u0000\n\u0002\u0010\u0013\n\u0002\u0008\u0003\n\u0002\u0010\u0014\n\u0002\u0008\u0003\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u0008\n\u0002\u0008\u0005\u0018\u0000 \u00132\u00020\u0001:\u0001\u0013B\u0015\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u00a2\u0006\u0002\u0010\u0006J\u0008\u0010\u000c\u001a\u00020\rH\u0002J\u001e\u0010\u000e\u001a\u00020\u000f2\u0006\u0010\u0010\u001a\u00020\u00032\u0006\u0010\u0011\u001a\u00020\u000f2\u0006\u0010\u0012\u001a\u00020\u000fR\u0014\u0010\u0002\u001a\u00020\u0003X\u0080\u0004\u00a2\u0006\u0008\n\u0000\u001a\u0004\u0008\u0007\u0010\u0008R\u0014\u0010\u0004\u001a\u00020\tX\u0080\u0004\u00a2\u0006\u0008\n\u0000\u001a\u0004\u0008\n\u0010\u000b\u00a8\u0006\u0014"
+    }
+    d2 = {
+        "Lcom/benchmarks/patrik/benchmarks/kotlinConverted/Fasta$FloatProbFreq;",
+        "",
+        "chars",
+        "",
+        "probs",
+        "",
+        "([B[D)V",
+        "getChars$app_debug",
+        "()[B",
+        "",
+        "getProbs$app_debug",
+        "()[F",
+        "makeCumulative",
+        "",
+        "selectRandomIntoBuffer",
+        "",
+        "buffer",
+        "bufferIndex",
+        "nRandom",
+        "Companion",
+        "app_debug"
+    }
+    k = 0x1
+    mv = {
+        0x1,
+        0x1,
+        0x9
+    }
+.end annotation
+
+
+# static fields
+.field public static final Companion:Lcom/benchmarks/patrik/benchmarks/kotlinConverted/Fasta$FloatProbFreq$Companion;
+
+# The value of this static final field might be set in the static constructor
+.field private static final IA:I = 0xf25
+
+# The value of this static final field might be set in the static constructor
+.field private static final IC:I = 0x7385
+
+# The value of this static final field might be set in the static constructor
+.field private static final IM:I = 0x222c0
+
+.field private static last:I
+
+
+# instance fields
+.field private final chars:[B
+    .annotation build Lorg/jetbrains/annotations/NotNull;
+    .end annotation
+.end field
+
+.field private final probs:[F
+    .annotation build Lorg/jetbrains/annotations/NotNull;
+    .end annotation
+.end field
+
+
+# direct methods
+.method static constructor <clinit>()V
+    .registers 2
+
+    .prologue
+    new-instance v0, Lcom/benchmarks/patrik/benchmarks/kotlinConverted/Fasta$FloatProbFreq$Companion;
+
+    const/4 v1, 0x0
+
+    invoke-direct {v0, v1}, Lcom/benchmarks/patrik/benchmarks/kotlinConverted/Fasta$FloatProbFreq$Companion;-><init>(Lkotlin/jvm/internal/DefaultConstructorMarker;)V
+
+    sput-object v0, Lcom/benchmarks/patrik/benchmarks/kotlinConverted/Fasta$FloatProbFreq;->Companion:Lcom/benchmarks/patrik/benchmarks/kotlinConverted/Fasta$FloatProbFreq$Companion;
+
+    .line 179
+    const/16 v0, 0x2a
+
+    sput v0, Lcom/benchmarks/patrik/benchmarks/kotlinConverted/Fasta$FloatProbFreq;->last:I
+
+    .line 180
+    const v0, 0x222c0
+
+    sput v0, Lcom/benchmarks/patrik/benchmarks/kotlinConverted/Fasta$FloatProbFreq;->IM:I
+
+    .line 181
+    const/16 v0, 0xf25
+
+    sput v0, Lcom/benchmarks/patrik/benchmarks/kotlinConverted/Fasta$FloatProbFreq;->IA:I
+
+    .line 182
+    const/16 v0, 0x7385
+
+    sput v0, Lcom/benchmarks/patrik/benchmarks/kotlinConverted/Fasta$FloatProbFreq;->IC:I
+
+    return-void
+.end method
+
+.method public constructor <init>([B[D)V
+    .registers 9
+    .param p1, "chars"    # [B
+        .annotation build Lorg/jetbrains/annotations/NotNull;
+        .end annotation
+    .end param
+    .param p2, "probs"    # [D
+        .annotation build Lorg/jetbrains/annotations/NotNull;
+        .end annotation
+    .end param
+
+    .prologue
+    const-string/jumbo v1, "chars"
+
+    invoke-static {p1, v1}, Lkotlin/jvm/internal/Intrinsics;->checkParameterIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string/jumbo v1, "probs"
+
+    invoke-static {p2, v1}, Lkotlin/jvm/internal/Intrinsics;->checkParameterIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 138
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lcom/benchmarks/patrik/benchmarks/kotlinConverted/Fasta$FloatProbFreq;->chars:[B
+
+    .line 142
+    array-length v1, p2
+
+    new-array v1, v1, [F
+
+    iput-object v1, p0, Lcom/benchmarks/patrik/benchmarks/kotlinConverted/Fasta$FloatProbFreq;->probs:[F
+
+    .line 143
+    const/4 v0, 0x0
+
+    array-length v1, p2
+
+    :goto_18
+    if-ge v0, v1, :cond_24
+
+    .line 144
+    iget-object v2, p0, Lcom/benchmarks/patrik/benchmarks/kotlinConverted/Fasta$FloatProbFreq;->probs:[F
+
+    aget-wide v4, p2, v0
+
+    double-to-float v3, v4
+
+    aput v3, v2, v0
+
+    .line 143
+    add-int/lit8 v0, v0, 0x1
+
+    .local v0, "i":I
+    goto :goto_18
+
+    .line 146
+    .end local v0    # "i":I
+    :cond_24
+    invoke-direct {p0}, Lcom/benchmarks/patrik/benchmarks/kotlinConverted/Fasta$FloatProbFreq;->makeCumulative()V
+
+    return-void
+.end method
+
+.method public static final synthetic access$getIA$cp()I
+    .registers 1
+
+    .prologue
+    .line 138
+    sget v0, Lcom/benchmarks/patrik/benchmarks/kotlinConverted/Fasta$FloatProbFreq;->IA:I
+
+    return v0
+.end method
+
+.method public static final synthetic access$getIC$cp()I
+    .registers 1
+
+    .prologue
+    .line 138
+    sget v0, Lcom/benchmarks/patrik/benchmarks/kotlinConverted/Fasta$FloatProbFreq;->IC:I
+
+    return v0
+.end method
+
+.method public static final synthetic access$getIM$cp()I
+    .registers 1
+
+    .prologue
+    .line 138
+    sget v0, Lcom/benchmarks/patrik/benchmarks/kotlinConverted/Fasta$FloatProbFreq;->IM:I
+
+    return v0
+.end method
+
+.method public static final synthetic access$getLast$cp()I
+    .registers 1
+
+    .prologue
+    .line 138
+    sget v0, Lcom/benchmarks/patrik/benchmarks/kotlinConverted/Fasta$FloatProbFreq;->last:I
+
+    return v0
+.end method
+
+.method public static final synthetic access$setLast$cp(I)V
+    .registers 1
+    .param p0, "<set-?>"    # I
+
+    .prologue
+    .line 138
+    sput p0, Lcom/benchmarks/patrik/benchmarks/kotlinConverted/Fasta$FloatProbFreq;->last:I
+
+    return-void
+.end method
+
+.method private final makeCumulative()V
+    .registers 7
+
+    .prologue
+    .line 150
+    const-wide/16 v0, 0x0
+
+    .line 151
+    .local v0, "cp":D
+    const/4 v2, 0x0
+
+    iget-object v3, p0, Lcom/benchmarks/patrik/benchmarks/kotlinConverted/Fasta$FloatProbFreq;->probs:[F
+
+    array-length v3, v3
+
+    :goto_6
+    if-ge v2, v3, :cond_16
+
+    .line 152
+    iget-object v4, p0, Lcom/benchmarks/patrik/benchmarks/kotlinConverted/Fasta$FloatProbFreq;->probs:[F
+
+    aget v4, v4, v2
+
+    float-to-double v4, v4
+
+    add-double/2addr v0, v4
+
+    .line 153
+    iget-object v4, p0, Lcom/benchmarks/patrik/benchmarks/kotlinConverted/Fasta$FloatProbFreq;->probs:[F
+
+    double-to-float v5, v0
+
+    aput v5, v4, v2
+
+    .line 151
+    add-int/lit8 v2, v2, 0x1
+
+    .local v2, "i":I
+    goto :goto_6
+
+    .line 155
+    .end local v2    # "i":I
+    :cond_16
+    return-void
+.end method
+
+
+# virtual methods
+.method public final getChars$app_debug()[B
+    .registers 2
+    .annotation build Lorg/jetbrains/annotations/NotNull;
+    .end annotation
+
+    .prologue
+    .line 138
+    iget-object v0, p0, Lcom/benchmarks/patrik/benchmarks/kotlinConverted/Fasta$FloatProbFreq;->chars:[B
+
+    return-object v0
+.end method
+
+.method public final getProbs$app_debug()[F
+    .registers 2
+    .annotation build Lorg/jetbrains/annotations/NotNull;
+    .end annotation
+
+    .prologue
+    .line 139
+    iget-object v0, p0, Lcom/benchmarks/patrik/benchmarks/kotlinConverted/Fasta$FloatProbFreq;->probs:[F
+
+    return-object v0
+.end method
+
+.method public final selectRandomIntoBuffer([BII)I
+    .registers 14
+    .param p1, "buffer"    # [B
+        .annotation build Lorg/jetbrains/annotations/NotNull;
+        .end annotation
+    .end param
+    .param p2, "bufferIndex"    # I
+    .param p3, "nRandom"    # I
+
+    .prologue
+    const/4 v7, 0x0
+
+    const-string/jumbo v8, "buffer"
+
+    invoke-static {p1, v8}, Lkotlin/jvm/internal/Intrinsics;->checkParameterIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 159
+    iget-object v1, p0, Lcom/benchmarks/patrik/benchmarks/kotlinConverted/Fasta$FloatProbFreq;->chars:[B
+
+    .line 160
+    .local v1, "chars":[B
+    iget-object v4, p0, Lcom/benchmarks/patrik/benchmarks/kotlinConverted/Fasta$FloatProbFreq;->probs:[F
+
+    .line 161
+    .local v4, "probs":[F
+    array-length v3, v4
+
+    .local v3, "len":I
+    move v6, v7
+
+    move v0, p2
+
+    .line 163
+    .end local p2    # "bufferIndex":I
+    .local v0, "bufferIndex":I
+    :goto_e
+    if-ge v6, p3, :cond_37
+
+    .line 164
+    sget-object v8, Lcom/benchmarks/patrik/benchmarks/kotlinConverted/Fasta$FloatProbFreq;->Companion:Lcom/benchmarks/patrik/benchmarks/kotlinConverted/Fasta$FloatProbFreq$Companion;
+
+    const/high16 v9, 0x3f800000    # 1.0f
+
+    invoke-virtual {v8, v9}, Lcom/benchmarks/patrik/benchmarks/kotlinConverted/Fasta$FloatProbFreq$Companion;->random(F)F
+
+    move-result v5
+
+    .local v5, "r":F
+    move v2, v7
+
+    .line 165
+    :goto_19
+    if-ge v2, v3, :cond_2e
+
+    .line 166
+    aget v8, v4, v2
+
+    cmpg-float v8, v5, v8
+
+    if-gez v8, :cond_2b
+
+    .line 167
+    add-int/lit8 p2, v0, 0x1
+
+    .end local v0    # "bufferIndex":I
+    .restart local p2    # "bufferIndex":I
+    aget-byte v8, v1, v2
+
+    aput-byte v8, p1, v0
+
+    .line 163
+    :goto_27
+    add-int/lit8 v6, v6, 0x1
+
+    .local v6, "rIndex":I
+    move v0, p2
+
+    .end local p2    # "bufferIndex":I
+    .restart local v0    # "bufferIndex":I
+    goto :goto_e
+
+    .line 165
+    .end local v6    # "rIndex":I
+    :cond_2b
+    add-int/lit8 v2, v2, 0x1
+
+    .local v2, "i":I
+    goto :goto_19
+
+    .line 172
+    .end local v2    # "i":I
+    :cond_2e
+    add-int/lit8 p2, v0, 0x1
+
+    .end local v0    # "bufferIndex":I
+    .restart local p2    # "bufferIndex":I
+    add-int/lit8 v8, v3, -0x1
+
+    aget-byte v8, v1, v8
+
+    aput-byte v8, p1, v0
+
+    goto :goto_27
+
+    .line 175
+    .end local v5    # "r":F
+    .end local p2    # "bufferIndex":I
+    .restart local v0    # "bufferIndex":I
+    :cond_37
+    return v0
+.end method
+
+
+
+

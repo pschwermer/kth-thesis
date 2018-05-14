@@ -1,0 +1,883 @@
+.class public Lcom/benchmarks/patrik/benchmarks/java/Fasta;
+.super Ljava/lang/Object;
+.source "Fasta.java"
+
+
+# annotations
+.annotation system Ldalvik/annotation/MemberClasses;
+    value = {
+        Lcom/benchmarks/patrik/benchmarks/java/Fasta$FloatProbFreq;
+    }
+.end annotation
+
+
+# static fields
+.field public static ALU:Ljava/lang/String; = null
+
+.field static final BUFFER_SIZE:I = 0xf400
+
+.field private static final HOMO_SAPIENS:Lcom/benchmarks/patrik/benchmarks/java/Fasta$FloatProbFreq;
+
+.field static final IA:I = 0xf25
+
+.field static final IC:I = 0x7385
+
+.field static final IM:I = 0x222c0
+
+.field private static final IUB:Lcom/benchmarks/patrik/benchmarks/java/Fasta$FloatProbFreq;
+
+.field static final LINE_LENGTH:I = 0x3c
+
+
+# direct methods
+.method static constructor <clinit>()V
+    .registers 4
+
+    .prologue
+    const/16 v2, 0xf
+
+    const/4 v3, 0x4
+
+    .line 23
+    const-string/jumbo v0, "GGCCGGGCGCGGTGGCTCACGCCTGTAATCCCAGCACTTTGGGAGGCCGAGGCGGGCGGATCACCTGAGGTCAGGAGTTCGAGACCAGCCTGGCCAACATGGTGAAACCCCGTCTCTACTAAAAATACAAAAATTAGCCGGGCGTGGTGGCGCGCGCCTGTAATCCCAGCTACTCGGGAGGCTGAGGCAGGAGAATCGCTTGAACCCGGGAGGCGGAGGTTGCAGTGAGCCGAGATCGCGCCACTGCACTCCAGCCTGGGCGACAGAGCGAGACTCCGTCTCAAAAA"
+
+    sput-object v0, Lcom/benchmarks/patrik/benchmarks/java/Fasta;->ALU:Ljava/lang/String;
+
+    .line 32
+    new-instance v0, Lcom/benchmarks/patrik/benchmarks/java/Fasta$FloatProbFreq;
+
+    new-array v1, v2, [B
+
+    fill-array-data v1, :array_2c
+
+    new-array v2, v2, [D
+
+    fill-array-data v2, :array_38
+
+    invoke-direct {v0, v1, v2}, Lcom/benchmarks/patrik/benchmarks/java/Fasta$FloatProbFreq;-><init>([B[D)V
+
+    sput-object v0, Lcom/benchmarks/patrik/benchmarks/java/Fasta;->IUB:Lcom/benchmarks/patrik/benchmarks/java/Fasta$FloatProbFreq;
+
+    .line 46
+    new-instance v0, Lcom/benchmarks/patrik/benchmarks/java/Fasta$FloatProbFreq;
+
+    new-array v1, v3, [B
+
+    fill-array-data v1, :array_78
+
+    new-array v2, v3, [D
+
+    fill-array-data v2, :array_7e
+
+    invoke-direct {v0, v1, v2}, Lcom/benchmarks/patrik/benchmarks/java/Fasta$FloatProbFreq;-><init>([B[D)V
+
+    sput-object v0, Lcom/benchmarks/patrik/benchmarks/java/Fasta;->HOMO_SAPIENS:Lcom/benchmarks/patrik/benchmarks/java/Fasta$FloatProbFreq;
+
+    return-void
+
+    .line 32
+    nop
+
+    :array_2c
+    .array-data 1
+        0x61t
+        0x63t
+        0x67t
+        0x74t
+        0x42t
+        0x44t
+        0x48t
+        0x4bt
+        0x4dt
+        0x4et
+        0x52t
+        0x53t
+        0x56t
+        0x57t
+        0x59t
+    .end array-data
+
+    :array_38
+    .array-data 8
+        0x3fd147ae147ae148L    # 0.27
+        0x3fbeb851eb851eb8L    # 0.12
+        0x3fbeb851eb851eb8L    # 0.12
+        0x3fd147ae147ae148L    # 0.27
+        0x3f947ae147ae147bL    # 0.02
+        0x3f947ae147ae147bL    # 0.02
+        0x3f947ae147ae147bL    # 0.02
+        0x3f947ae147ae147bL    # 0.02
+        0x3f947ae147ae147bL    # 0.02
+        0x3f947ae147ae147bL    # 0.02
+        0x3f947ae147ae147bL    # 0.02
+        0x3f947ae147ae147bL    # 0.02
+        0x3f947ae147ae147bL    # 0.02
+        0x3f947ae147ae147bL    # 0.02
+        0x3f947ae147ae147bL    # 0.02
+    .end array-data
+
+    .line 46
+    :array_78
+    .array-data 1
+        0x61t
+        0x63t
+        0x67t
+        0x74t
+    .end array-data
+
+    :array_7e
+    .array-data 8
+        0x3fd3639d20baeb5bL    # 0.302954942668
+        0x3fc957ae3dcd561bL    # 0.1979883004921
+        0x3fc9493aeab6c2bfL    # 0.1975473066391
+        0x3fd34bee4b030838L    # 0.3015094502008
+    .end array-data
+.end method
+
+.method public constructor <init>()V
+    .registers 1
+
+    .prologue
+    .line 14
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
+
+.method static final makeRandomFasta(Ljava/lang/String;Ljava/lang/String;Lcom/benchmarks/patrik/benchmarks/java/Fasta$FloatProbFreq;ILjava/io/OutputStream;)V
+    .registers 14
+    .param p0, "id"    # Ljava/lang/String;
+    .param p1, "desc"    # Ljava/lang/String;
+    .param p2, "fpf"    # Lcom/benchmarks/patrik/benchmarks/java/Fasta$FloatProbFreq;
+    .param p3, "nChars"    # I
+    .param p4, "writer"    # Ljava/io/OutputStream;
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
+    .prologue
+    .line 62
+    const/16 v1, 0x3c
+
+    .line 63
+    .local v1, "LINE_LENGTH":I
+    const v0, 0xf400
+
+    .line 64
+    .local v0, "BUFFER_SIZE":I
+    const v7, 0xf400
+
+    new-array v2, v7, [B
+
+    .line 66
+    .local v2, "buffer":[B
+    array-length v7, v2
+
+    rem-int/lit8 v7, v7, 0x3d
+
+    if-eqz v7, :cond_18
+
+    .line 67
+    new-instance v7, Ljava/lang/IllegalStateException;
+
+    const-string/jumbo v8, "buffer size must be a multiple of line length (including line break)"
+
+    invoke-direct {v7, v8}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw v7
+
+    .line 72
+    :cond_18
+    new-instance v7, Ljava/lang/StringBuilder;
+
+    invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v8, ">"
+
+    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v7
+
+    invoke-virtual {v7, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v7
+
+    const-string/jumbo v8, " "
+
+    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v7
+
+    invoke-virtual {v7, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v7
+
+    const/16 v8, 0xa
+
+    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    move-result-object v7
+
+    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v6
+
+    .line 73
+    .local v6, "descStr":Ljava/lang/String;
+    invoke-virtual {v6}, Ljava/lang/String;->getBytes()[B
+
+    move-result-object v7
+
+    invoke-virtual {p4, v7}, Ljava/io/OutputStream;->write([B)V
+
+    .line 75
+    const/4 v3, 0x0
+
+    .line 76
+    .local v3, "bufferIndex":I
+    :goto_45
+    if-lez p3, :cond_66
+
+    .line 78
+    const/16 v7, 0x3c
+
+    if-lt p3, v7, :cond_64
+
+    .line 79
+    const/16 v5, 0x3c
+
+    .line 84
+    .local v5, "chunkSize":I
+    :goto_4d
+    const v7, 0xf400
+
+    if-ne v3, v7, :cond_57
+
+    .line 85
+    const/4 v7, 0x0
+
+    invoke-virtual {p4, v2, v7, v3}, Ljava/io/OutputStream;->write([BII)V
+
+    .line 86
+    const/4 v3, 0x0
+
+    .line 89
+    :cond_57
+    invoke-virtual {p2, v2, v3, v5}, Lcom/benchmarks/patrik/benchmarks/java/Fasta$FloatProbFreq;->selectRandomIntoBuffer([BII)I
+
+    move-result v3
+
+    .line 90
+    add-int/lit8 v4, v3, 0x1
+
+    .end local v3    # "bufferIndex":I
+    .local v4, "bufferIndex":I
+    const/16 v7, 0xa
+
+    aput-byte v7, v2, v3
+
+    .line 92
+    sub-int/2addr p3, v5
+
+    move v3, v4
+
+    .line 93
+    .end local v4    # "bufferIndex":I
+    .restart local v3    # "bufferIndex":I
+    goto :goto_45
+
+    .line 81
+    .end local v5    # "chunkSize":I
+    :cond_64
+    move v5, p3
+
+    .restart local v5    # "chunkSize":I
+    goto :goto_4d
+
+    .line 95
+    .end local v5    # "chunkSize":I
+    :cond_66
+    const/4 v7, 0x0
+
+    invoke-virtual {p4, v2, v7, v3}, Ljava/io/OutputStream;->write([BII)V
+
+    .line 96
+    return-void
+.end method
+
+.method static final makeRepeatFasta(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILjava/io/OutputStream;)V
+    .registers 19
+    .param p0, "id"    # Ljava/lang/String;
+    .param p1, "desc"    # Ljava/lang/String;
+    .param p2, "alu"    # Ljava/lang/String;
+    .param p3, "nChars"    # I
+    .param p4, "writer"    # Ljava/io/OutputStream;
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
+    .prologue
+    .line 101
+    invoke-virtual/range {p2 .. p2}, Ljava/lang/String;->getBytes()[B
+
+    move-result-object v3
+
+    .line 102
+    .local v3, "aluBytes":[B
+    const/4 v4, 0x0
+
+    .line 104
+    .local v4, "aluIndex":I
+    const/16 v2, 0x3c
+
+    .line 105
+    .local v2, "LINE_LENGTH":I
+    const v1, 0xf400
+
+    .line 106
+    .local v1, "BUFFER_SIZE":I
+    const v12, 0xf400
+
+    new-array v6, v12, [B
+
+    .line 108
+    .local v6, "buffer":[B
+    array-length v12, v6
+
+    rem-int/lit8 v12, v12, 0x3d
+
+    if-eqz v12, :cond_1d
+
+    .line 109
+    new-instance v12, Ljava/lang/IllegalStateException;
+
+    const-string/jumbo v13, "buffer size must be a multiple of line length (including line break)"
+
+    invoke-direct {v12, v13}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw v12
+
+    .line 114
+    :cond_1d
+    new-instance v12, Ljava/lang/StringBuilder;
+
+    invoke-direct {v12}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v13, ">"
+
+    invoke-virtual {v12, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v12
+
+    invoke-virtual {v12, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v12
+
+    const-string/jumbo v13, " "
+
+    invoke-virtual {v12, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v12
+
+    invoke-virtual {v12, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v12
+
+    const/16 v13, 0xa
+
+    invoke-virtual {v12, v13}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    move-result-object v12
+
+    invoke-virtual {v12}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v10
+
+    .line 115
+    .local v10, "descStr":Ljava/lang/String;
+    invoke-virtual {v10}, Ljava/lang/String;->getBytes()[B
+
+    move-result-object v12
+
+    move-object/from16 v0, p4
+
+    invoke-virtual {v0, v12}, Ljava/io/OutputStream;->write([B)V
+
+    .line 117
+    const/4 v7, 0x0
+
+    .line 118
+    .local v7, "bufferIndex":I
+    :goto_4c
+    if-lez p3, :cond_83
+
+    .line 120
+    const/16 v12, 0x3c
+
+    move/from16 v0, p3
+
+    if-lt v0, v12, :cond_77
+
+    .line 121
+    const/16 v9, 0x3c
+
+    .line 126
+    .local v9, "chunkSize":I
+    :goto_56
+    const v12, 0xf400
+
+    if-ne v7, v12, :cond_62
+
+    .line 127
+    const/4 v12, 0x0
+
+    move-object/from16 v0, p4
+
+    invoke-virtual {v0, v6, v12, v7}, Ljava/io/OutputStream;->write([BII)V
+
+    .line 128
+    const/4 v7, 0x0
+
+    .line 131
+    :cond_62
+    const/4 v11, 0x0
+
+    .local v11, "i":I
+    move v8, v7
+
+    .end local v7    # "bufferIndex":I
+    .local v8, "bufferIndex":I
+    :goto_64
+    if-ge v11, v9, :cond_7a
+
+    .line 132
+    array-length v12, v3
+
+    if-ne v4, v12, :cond_6a
+
+    .line 133
+    const/4 v4, 0x0
+
+    .line 136
+    :cond_6a
+    add-int/lit8 v7, v8, 0x1
+
+    .end local v8    # "bufferIndex":I
+    .restart local v7    # "bufferIndex":I
+    add-int/lit8 v5, v4, 0x1
+
+    .end local v4    # "aluIndex":I
+    .local v5, "aluIndex":I
+    aget-byte v12, v3, v4
+
+    aput-byte v12, v6, v8
+
+    .line 131
+    add-int/lit8 v11, v11, 0x1
+
+    move v8, v7
+
+    .end local v7    # "bufferIndex":I
+    .restart local v8    # "bufferIndex":I
+    move v4, v5
+
+    .end local v5    # "aluIndex":I
+    .restart local v4    # "aluIndex":I
+    goto :goto_64
+
+    .line 123
+    .end local v8    # "bufferIndex":I
+    .end local v9    # "chunkSize":I
+    .end local v11    # "i":I
+    .restart local v7    # "bufferIndex":I
+    :cond_77
+    move/from16 v9, p3
+
+    .restart local v9    # "chunkSize":I
+    goto :goto_56
+
+    .line 138
+    .end local v7    # "bufferIndex":I
+    .restart local v8    # "bufferIndex":I
+    .restart local v11    # "i":I
+    :cond_7a
+    add-int/lit8 v7, v8, 0x1
+
+    .end local v8    # "bufferIndex":I
+    .restart local v7    # "bufferIndex":I
+    const/16 v12, 0xa
+
+    aput-byte v12, v6, v8
+
+    .line 140
+    sub-int p3, p3, v9
+
+    .line 141
+    goto :goto_4c
+
+    .line 143
+    .end local v9    # "chunkSize":I
+    .end local v11    # "i":I
+    :cond_83
+    const/4 v12, 0x0
+
+    move-object/from16 v0, p4
+
+    invoke-virtual {v0, v6, v12, v7}, Ljava/io/OutputStream;->write([BII)V
+
+    .line 144
+    return-void
+.end method
+
+
+# virtual methods
+.method public runBenchmark([Ljava/lang/String;)V
+    .registers 8
+    .param p1, "args"    # [Ljava/lang/String;
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
+    .prologue
+    .line 147
+    const/16 v0, 0x3e8
+
+    .line 149
+    .local v0, "n":I
+    array-length v2, p1
+
+    if-lez v2, :cond_c
+
+    .line 150
+    const/4 v2, 0x0
+
+    aget-object v2, p1, v2
+
+    invoke-static {v2}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
+
+    move-result v0
+
+    .line 153
+    :cond_c
+    sget-object v1, Ljava/lang/System;->out:Ljava/io/PrintStream;
+
+    .line 154
+    .local v1, "out":Ljava/io/OutputStream;
+    const-string/jumbo v2, "ONE"
+
+    const-string/jumbo v3, "Homo sapiens alu"
+
+    sget-object v4, Lcom/benchmarks/patrik/benchmarks/java/Fasta;->ALU:Ljava/lang/String;
+
+    mul-int/lit8 v5, v0, 0x2
+
+    invoke-static {v2, v3, v4, v5, v1}, Lcom/benchmarks/patrik/benchmarks/java/Fasta;->makeRepeatFasta(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILjava/io/OutputStream;)V
+
+    .line 155
+    const-string/jumbo v2, "TWO"
+
+    const-string/jumbo v3, "IUB ambiguity codes"
+
+    sget-object v4, Lcom/benchmarks/patrik/benchmarks/java/Fasta;->IUB:Lcom/benchmarks/patrik/benchmarks/java/Fasta$FloatProbFreq;
+
+    mul-int/lit8 v5, v0, 0x3
+
+    invoke-static {v2, v3, v4, v5, v1}, Lcom/benchmarks/patrik/benchmarks/java/Fasta;->makeRandomFasta(Ljava/lang/String;Ljava/lang/String;Lcom/benchmarks/patrik/benchmarks/java/Fasta$FloatProbFreq;ILjava/io/OutputStream;)V
+
+    .line 156
+    const-string/jumbo v2, "THREE"
+
+    const-string/jumbo v3, "Homo sapiens frequency"
+
+    sget-object v4, Lcom/benchmarks/patrik/benchmarks/java/Fasta;->HOMO_SAPIENS:Lcom/benchmarks/patrik/benchmarks/java/Fasta$FloatProbFreq;
+
+    mul-int/lit8 v5, v0, 0x5
+
+    invoke-static {v2, v3, v4, v5, v1}, Lcom/benchmarks/patrik/benchmarks/java/Fasta;->makeRandomFasta(Ljava/lang/String;Ljava/lang/String;Lcom/benchmarks/patrik/benchmarks/java/Fasta$FloatProbFreq;ILjava/io/OutputStream;)V
+
+    .line 157
+    invoke-virtual {v1}, Ljava/io/OutputStream;->close()V
+
+    .line 158
+    return-void
+.end method
+
+.class public final Lcom/benchmarks/patrik/benchmarks/java/Fasta$FloatProbFreq;
+.super Ljava/lang/Object;
+.source "Fasta.java"
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Lcom/benchmarks/patrik/benchmarks/java/Fasta;
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x19
+    name = "FloatProbFreq"
+.end annotation
+
+
+# static fields
+.field static last:I
+
+
+# instance fields
+.field final chars:[B
+
+.field final probs:[F
+
+
+# direct methods
+.method static constructor <clinit>()V
+    .registers 1
+
+    .prologue
+    .line 161
+    const/16 v0, 0x2a
+
+    sput v0, Lcom/benchmarks/patrik/benchmarks/java/Fasta$FloatProbFreq;->last:I
+
+    return-void
+.end method
+
+.method public constructor <init>([B[D)V
+    .registers 7
+    .param p1, "chars"    # [B
+    .param p2, "probs"    # [D
+
+    .prologue
+    .line 165
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 166
+    iput-object p1, p0, Lcom/benchmarks/patrik/benchmarks/java/Fasta$FloatProbFreq;->chars:[B
+
+    .line 167
+    array-length v1, p2
+
+    new-array v1, v1, [F
+
+    iput-object v1, p0, Lcom/benchmarks/patrik/benchmarks/java/Fasta$FloatProbFreq;->probs:[F
+
+    .line 168
+    const/4 v0, 0x0
+
+    .local v0, "i":I
+    :goto_b
+    array-length v1, p2
+
+    if-ge v0, v1, :cond_18
+
+    .line 169
+    iget-object v1, p0, Lcom/benchmarks/patrik/benchmarks/java/Fasta$FloatProbFreq;->probs:[F
+
+    aget-wide v2, p2, v0
+
+    double-to-float v2, v2
+
+    aput v2, v1, v0
+
+    .line 168
+    add-int/lit8 v0, v0, 0x1
+
+    goto :goto_b
+
+    .line 171
+    :cond_18
+    invoke-direct {p0}, Lcom/benchmarks/patrik/benchmarks/java/Fasta$FloatProbFreq;->makeCumulative()V
+
+    .line 172
+    return-void
+.end method
+
+.method private final makeCumulative()V
+    .registers 7
+
+    .prologue
+    .line 175
+    const-wide/16 v0, 0x0
+
+    .line 176
+    .local v0, "cp":D
+    const/4 v2, 0x0
+
+    .local v2, "i":I
+    :goto_3
+    iget-object v3, p0, Lcom/benchmarks/patrik/benchmarks/java/Fasta$FloatProbFreq;->probs:[F
+
+    array-length v3, v3
+
+    if-ge v2, v3, :cond_16
+
+    .line 177
+    iget-object v3, p0, Lcom/benchmarks/patrik/benchmarks/java/Fasta$FloatProbFreq;->probs:[F
+
+    aget v3, v3, v2
+
+    float-to-double v4, v3
+
+    add-double/2addr v0, v4
+
+    .line 178
+    iget-object v3, p0, Lcom/benchmarks/patrik/benchmarks/java/Fasta$FloatProbFreq;->probs:[F
+
+    double-to-float v4, v0
+
+    aput v4, v3, v2
+
+    .line 176
+    add-int/lit8 v2, v2, 0x1
+
+    goto :goto_3
+
+    .line 180
+    :cond_16
+    return-void
+.end method
+
+.method public static final random(F)F
+    .registers 4
+    .param p0, "max"    # F
+
+    .prologue
+    .line 205
+    const v0, 0x36efbab4
+
+    .line 206
+    .local v0, "oneOverIM":F
+    sget v1, Lcom/benchmarks/patrik/benchmarks/java/Fasta$FloatProbFreq;->last:I
+
+    mul-int/lit16 v1, v1, 0xf25
+
+    add-int/lit16 v1, v1, 0x7385
+
+    const v2, 0x222c0
+
+    rem-int/2addr v1, v2
+
+    sput v1, Lcom/benchmarks/patrik/benchmarks/java/Fasta$FloatProbFreq;->last:I
+
+    .line 207
+    sget v1, Lcom/benchmarks/patrik/benchmarks/java/Fasta$FloatProbFreq;->last:I
+
+    int-to-float v1, v1
+
+    mul-float/2addr v1, p0
+
+    const v2, 0x36efbab4
+
+    mul-float/2addr v1, v2
+
+    return v1
+.end method
+
+
+# virtual methods
+.method public final selectRandomIntoBuffer([BII)I
+    .registers 12
+    .param p1, "buffer"    # [B
+    .param p2, "bufferIndex"    # I
+    .param p3, "nRandom"    # I
+
+    .prologue
+    .line 183
+    iget-object v1, p0, Lcom/benchmarks/patrik/benchmarks/java/Fasta$FloatProbFreq;->chars:[B
+
+    .line 184
+    .local v1, "chars":[B
+    iget-object v4, p0, Lcom/benchmarks/patrik/benchmarks/java/Fasta$FloatProbFreq;->probs:[F
+
+    .line 185
+    .local v4, "probs":[F
+    array-length v3, v4
+
+    .line 188
+    .local v3, "len":I
+    const/4 v6, 0x0
+
+    .local v6, "rIndex":I
+    move v0, p2
+
+    .end local p2    # "bufferIndex":I
+    .local v0, "bufferIndex":I
+    :goto_7
+    if-ge v6, p3, :cond_2e
+
+    .line 189
+    const/high16 v7, 0x3f800000    # 1.0f
+
+    invoke-static {v7}, Lcom/benchmarks/patrik/benchmarks/java/Fasta$FloatProbFreq;->random(F)F
+
+    move-result v5
+
+    .line 190
+    .local v5, "r":F
+    const/4 v2, 0x0
+
+    .local v2, "i":I
+    :goto_10
+    if-ge v2, v3, :cond_25
+
+    .line 191
+    aget v7, v4, v2
+
+    cmpg-float v7, v5, v7
+
+    if-gez v7, :cond_22
+
+    .line 192
+    add-int/lit8 p2, v0, 0x1
+
+    .end local v0    # "bufferIndex":I
+    .restart local p2    # "bufferIndex":I
+    aget-byte v7, v1, v2
+
+    aput-byte v7, p1, v0
+
+    .line 188
+    :goto_1e
+    add-int/lit8 v6, v6, 0x1
+
+    move v0, p2
+
+    .end local p2    # "bufferIndex":I
+    .restart local v0    # "bufferIndex":I
+    goto :goto_7
+
+    .line 190
+    :cond_22
+    add-int/lit8 v2, v2, 0x1
+
+    goto :goto_10
+
+    .line 197
+    :cond_25
+    add-int/lit8 p2, v0, 0x1
+
+    .end local v0    # "bufferIndex":I
+    .restart local p2    # "bufferIndex":I
+    add-int/lit8 v7, v3, -0x1
+
+    aget-byte v7, v1, v7
+
+    aput-byte v7, p1, v0
+
+    goto :goto_1e
+
+    .line 200
+    .end local v2    # "i":I
+    .end local v5    # "r":F
+    .end local p2    # "bufferIndex":I
+    .restart local v0    # "bufferIndex":I
+    :cond_2e
+    return v0
+.end method
+
+

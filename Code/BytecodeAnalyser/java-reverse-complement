@@ -1,0 +1,854 @@
+.class public Lcom/benchmarks/patrik/benchmarks/java/ReverseComplement;
+.super Ljava/lang/Object;
+.source "ReverseComplement.java"
+
+
+# static fields
+.field static LINE_WIDTH:I = 0x0
+
+.field static buffer:[B = null
+
+.field static data:[B = null
+
+.field static end:I = 0x0
+
+.field static in:Ljava/io/InputStream; = null
+
+.field static limit:I = 0x0
+
+.field static outputBuffer:[B = null
+
+.field static outputPos:I = 0x0
+
+.field static pos:I = 0x0
+
+.field static size:I = 0x0
+
+.field static start:I = 0x0
+
+.field static final transFrom:Ljava/lang/String; = "ACGTUMRWSYKVHDBN"
+
+.field static final transMap:[B
+
+.field static final transTo:Ljava/lang/String; = "TGCAAKYWSRMBDHVN"
+
+
+# direct methods
+.method static constructor <clinit>()V
+    .registers 8
+
+    .prologue
+    const/high16 v7, 0x10000
+
+    const/4 v6, 0x0
+
+    .line 15
+    const/16 v2, 0x80
+
+    new-array v2, v2, [B
+
+    sput-object v2, Lcom/benchmarks/patrik/benchmarks/java/ReverseComplement;->transMap:[B
+
+    .line 18
+    const/4 v1, 0x0
+
+    .local v1, "i":I
+    :goto_a
+    sget-object v2, Lcom/benchmarks/patrik/benchmarks/java/ReverseComplement;->transMap:[B
+
+    array-length v2, v2
+
+    if-ge v1, v2, :cond_17
+
+    sget-object v2, Lcom/benchmarks/patrik/benchmarks/java/ReverseComplement;->transMap:[B
+
+    int-to-byte v3, v1
+
+    aput-byte v3, v2, v1
+
+    add-int/lit8 v1, v1, 0x1
+
+    goto :goto_a
+
+    .line 19
+    :cond_17
+    const/4 v1, 0x0
+
+    :goto_18
+    const-string/jumbo v2, "ACGTUMRWSYKVHDBN"
+
+    invoke-virtual {v2}, Ljava/lang/String;->length()I
+
+    move-result v2
+
+    if-ge v1, v2, :cond_3f
+
+    .line 20
+    const-string/jumbo v2, "ACGTUMRWSYKVHDBN"
+
+    invoke-virtual {v2, v1}, Ljava/lang/String;->charAt(I)C
+
+    move-result v0
+
+    .line 21
+    .local v0, "c":C
+    sget-object v2, Lcom/benchmarks/patrik/benchmarks/java/ReverseComplement;->transMap:[B
+
+    sget-object v3, Lcom/benchmarks/patrik/benchmarks/java/ReverseComplement;->transMap:[B
+
+    invoke-static {v0}, Ljava/lang/Character;->toLowerCase(C)C
+
+    move-result v4
+
+    const-string/jumbo v5, "TGCAAKYWSRMBDHVN"
+
+    invoke-virtual {v5, v1}, Ljava/lang/String;->charAt(I)C
+
+    move-result v5
+
+    int-to-byte v5, v5
+
+    aput-byte v5, v3, v4
+
+    aput-byte v5, v2, v0
+
+    .line 19
+    add-int/lit8 v1, v1, 0x1
+
+    goto :goto_18
+
+    .line 25
+    .end local v0    # "c":C
+    :cond_3f
+    new-array v2, v7, [B
+
+    sput-object v2, Lcom/benchmarks/patrik/benchmarks/java/ReverseComplement;->buffer:[B
+
+    .line 26
+    sget-object v2, Ljava/lang/System;->in:Ljava/io/InputStream;
+
+    sput-object v2, Lcom/benchmarks/patrik/benchmarks/java/ReverseComplement;->in:Ljava/io/InputStream;
+
+    .line 66
+    sput v6, Lcom/benchmarks/patrik/benchmarks/java/ReverseComplement;->LINE_WIDTH:I
+
+    .line 67
+    const/high16 v2, 0x100000
+
+    new-array v2, v2, [B
+
+    sput-object v2, Lcom/benchmarks/patrik/benchmarks/java/ReverseComplement;->data:[B
+
+    .line 69
+    new-array v2, v7, [B
+
+    sput-object v2, Lcom/benchmarks/patrik/benchmarks/java/ReverseComplement;->outputBuffer:[B
+
+    .line 70
+    sput v6, Lcom/benchmarks/patrik/benchmarks/java/ReverseComplement;->outputPos:I
+
+    return-void
+.end method
+
+.method public constructor <init>()V
+    .registers 1
+
+    .prologue
+    .line 11
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
+
+.method static appendLine()V
+    .registers 7
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/Exception;
+        }
+    .end annotation
+
+    .prologue
+    const/4 v5, 0x0
+
+    .line 110
+    sget v3, Lcom/benchmarks/patrik/benchmarks/java/ReverseComplement;->end:I
+
+    sget v4, Lcom/benchmarks/patrik/benchmarks/java/ReverseComplement;->start:I
+
+    sub-int v2, v3, v4
+
+    .line 111
+    .local v2, "len":I
+    sget v3, Lcom/benchmarks/patrik/benchmarks/java/ReverseComplement;->LINE_WIDTH:I
+
+    if-nez v3, :cond_d
+
+    sput v2, Lcom/benchmarks/patrik/benchmarks/java/ReverseComplement;->LINE_WIDTH:I
+
+    .line 112
+    :cond_d
+    sget v3, Lcom/benchmarks/patrik/benchmarks/java/ReverseComplement;->size:I
+
+    add-int/2addr v3, v2
+
+    sget-object v4, Lcom/benchmarks/patrik/benchmarks/java/ReverseComplement;->data:[B
+
+    array-length v4, v4
+
+    if-le v3, v4, :cond_27
+
+    .line 113
+    sget-object v0, Lcom/benchmarks/patrik/benchmarks/java/ReverseComplement;->data:[B
+
+    .line 114
+    .local v0, "data0":[B
+    sget-object v3, Lcom/benchmarks/patrik/benchmarks/java/ReverseComplement;->data:[B
+
+    array-length v3, v3
+
+    mul-int/lit8 v3, v3, 0x2
+
+    new-array v3, v3, [B
+
+    sput-object v3, Lcom/benchmarks/patrik/benchmarks/java/ReverseComplement;->data:[B
+
+    .line 115
+    sget-object v3, Lcom/benchmarks/patrik/benchmarks/java/ReverseComplement;->data:[B
+
+    sget v4, Lcom/benchmarks/patrik/benchmarks/java/ReverseComplement;->size:I
+
+    invoke-static {v0, v5, v3, v5, v4}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+
+    .line 117
+    .end local v0    # "data0":[B
+    :cond_27
+    sget v1, Lcom/benchmarks/patrik/benchmarks/java/ReverseComplement;->start:I
+
+    .local v1, "i":I
+    :goto_29
+    sget v3, Lcom/benchmarks/patrik/benchmarks/java/ReverseComplement;->end:I
+
+    if-ge v1, v3, :cond_42
+
+    .line 118
+    sget-object v3, Lcom/benchmarks/patrik/benchmarks/java/ReverseComplement;->data:[B
+
+    sget v4, Lcom/benchmarks/patrik/benchmarks/java/ReverseComplement;->size:I
+
+    add-int/lit8 v5, v4, 0x1
+
+    sput v5, Lcom/benchmarks/patrik/benchmarks/java/ReverseComplement;->size:I
+
+    sget-object v5, Lcom/benchmarks/patrik/benchmarks/java/ReverseComplement;->transMap:[B
+
+    sget-object v6, Lcom/benchmarks/patrik/benchmarks/java/ReverseComplement;->buffer:[B
+
+    aget-byte v6, v6, v1
+
+    aget-byte v5, v5, v6
+
+    aput-byte v5, v3, v4
+
+    .line 117
+    add-int/lit8 v1, v1, 0x1
+
+    goto :goto_29
+
+    .line 120
+    :cond_42
+    return-void
+.end method
+
+.method static endPos()I
+    .registers 3
+
+    .prologue
+    .line 31
+    sget v0, Lcom/benchmarks/patrik/benchmarks/java/ReverseComplement;->pos:I
+
+    .local v0, "off":I
+    :goto_2
+    sget v1, Lcom/benchmarks/patrik/benchmarks/java/ReverseComplement;->limit:I
+
+    if-ge v0, v1, :cond_12
+
+    .line 32
+    sget-object v1, Lcom/benchmarks/patrik/benchmarks/java/ReverseComplement;->buffer:[B
+
+    aget-byte v1, v1, v0
+
+    const/16 v2, 0xa
+
+    if-ne v1, v2, :cond_f
+
+    .line 35
+    :goto_e
+    return v0
+
+    .line 31
+    :cond_f
+    add-int/lit8 v0, v0, 0x1
+
+    goto :goto_2
+
+    .line 35
+    :cond_12
+    const/4 v0, -0x1
+
+    goto :goto_e
+.end method
+
+.method static finishData()V
+    .registers 4
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/Exception;
+        }
+    .end annotation
+
+    .prologue
+    .line 93
+    .local v0, "len":I
+    :goto_0
+    sget v2, Lcom/benchmarks/patrik/benchmarks/java/ReverseComplement;->size:I
+
+    if-lez v2, :cond_2b
+
+    .line 94
+    sget v2, Lcom/benchmarks/patrik/benchmarks/java/ReverseComplement;->LINE_WIDTH:I
+
+    sget v3, Lcom/benchmarks/patrik/benchmarks/java/ReverseComplement;->size:I
+
+    invoke-static {v2, v3}, Ljava/lang/Math;->min(II)I
+
+    move-result v0
+
+    .line 95
+    add-int/lit8 v2, v0, 0x1
+
+    invoke-static {v2}, Lcom/benchmarks/patrik/benchmarks/java/ReverseComplement;->prepareWrite(I)V
+
+    move v1, v0
+
+    .line 96
+    .end local v0    # "len":I
+    .local v1, "len":I
+    :goto_12
+    add-int/lit8 v0, v1, -0x1
+
+    .end local v1    # "len":I
+    .restart local v0    # "len":I
+    if-eqz v1, :cond_25
+
+    .line 97
+    sget-object v2, Lcom/benchmarks/patrik/benchmarks/java/ReverseComplement;->data:[B
+
+    sget v3, Lcom/benchmarks/patrik/benchmarks/java/ReverseComplement;->size:I
+
+    add-int/lit8 v3, v3, -0x1
+
+    sput v3, Lcom/benchmarks/patrik/benchmarks/java/ReverseComplement;->size:I
+
+    aget-byte v2, v2, v3
+
+    invoke-static {v2}, Lcom/benchmarks/patrik/benchmarks/java/ReverseComplement;->write(I)V
+
+    move v1, v0
+
+    .end local v0    # "len":I
+    .restart local v1    # "len":I
+    goto :goto_12
+
+    .line 99
+    .end local v1    # "len":I
+    .restart local v0    # "len":I
+    :cond_25
+    const/16 v2, 0xa
+
+    invoke-static {v2}, Lcom/benchmarks/patrik/benchmarks/java/ReverseComplement;->write(I)V
+
+    goto :goto_0
+
+    .line 101
+    :cond_2b
+    invoke-static {}, Lcom/benchmarks/patrik/benchmarks/java/ReverseComplement;->resetData()V
+
+    .line 102
+    return-void
+.end method
+
+.method static flushData()V
+    .registers 4
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/Exception;
+        }
+    .end annotation
+
+    .prologue
+    const/4 v3, 0x0
+
+    .line 73
+    sget-object v0, Ljava/lang/System;->out:Ljava/io/PrintStream;
+
+    sget-object v1, Lcom/benchmarks/patrik/benchmarks/java/ReverseComplement;->outputBuffer:[B
+
+    sget v2, Lcom/benchmarks/patrik/benchmarks/java/ReverseComplement;->outputPos:I
+
+    invoke-virtual {v0, v1, v3, v2}, Ljava/io/PrintStream;->write([BII)V
+
+    .line 74
+    sput v3, Lcom/benchmarks/patrik/benchmarks/java/ReverseComplement;->outputPos:I
+
+    .line 75
+    return-void
+.end method
+
+.method static nextLine()Z
+    .registers 8
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/Exception;
+        }
+    .end annotation
+
+    .prologue
+    const/16 v7, 0x20
+
+    const/4 v1, 0x0
+
+    .line 40
+    .local v0, "r":I
+    :cond_3
+    :goto_3
+    invoke-static {}, Lcom/benchmarks/patrik/benchmarks/java/ReverseComplement;->endPos()I
+
+    move-result v2
+
+    sput v2, Lcom/benchmarks/patrik/benchmarks/java/ReverseComplement;->end:I
+
+    .line 41
+    sget v2, Lcom/benchmarks/patrik/benchmarks/java/ReverseComplement;->end:I
+
+    if-ltz v2, :cond_57
+
+    .line 42
+    sget v2, Lcom/benchmarks/patrik/benchmarks/java/ReverseComplement;->pos:I
+
+    sput v2, Lcom/benchmarks/patrik/benchmarks/java/ReverseComplement;->start:I
+
+    .line 43
+    sget v2, Lcom/benchmarks/patrik/benchmarks/java/ReverseComplement;->end:I
+
+    add-int/lit8 v2, v2, 0x1
+
+    sput v2, Lcom/benchmarks/patrik/benchmarks/java/ReverseComplement;->pos:I
+
+    .line 44
+    sget-object v2, Lcom/benchmarks/patrik/benchmarks/java/ReverseComplement;->buffer:[B
+
+    sget v3, Lcom/benchmarks/patrik/benchmarks/java/ReverseComplement;->end:I
+
+    add-int/lit8 v3, v3, -0x1
+
+    aget-byte v2, v2, v3
+
+    const/16 v3, 0xd
+
+    if-ne v2, v3, :cond_29
+
+    .line 45
+    sget v2, Lcom/benchmarks/patrik/benchmarks/java/ReverseComplement;->end:I
+
+    add-int/lit8 v2, v2, -0x1
+
+    sput v2, Lcom/benchmarks/patrik/benchmarks/java/ReverseComplement;->end:I
+
+    .line 46
+    :cond_29
+    :goto_29
+    sget-object v2, Lcom/benchmarks/patrik/benchmarks/java/ReverseComplement;->buffer:[B
+
+    sget v3, Lcom/benchmarks/patrik/benchmarks/java/ReverseComplement;->start:I
+
+    aget-byte v2, v2, v3
+
+    if-ne v2, v7, :cond_38
+
+    sget v2, Lcom/benchmarks/patrik/benchmarks/java/ReverseComplement;->start:I
+
+    add-int/lit8 v2, v2, 0x1
+
+    sput v2, Lcom/benchmarks/patrik/benchmarks/java/ReverseComplement;->start:I
+
+    goto :goto_29
+
+    .line 47
+    :cond_38
+    :goto_38
+    sget v2, Lcom/benchmarks/patrik/benchmarks/java/ReverseComplement;->end:I
+
+    sget v3, Lcom/benchmarks/patrik/benchmarks/java/ReverseComplement;->start:I
+
+    if-le v2, v3, :cond_4f
+
+    sget-object v2, Lcom/benchmarks/patrik/benchmarks/java/ReverseComplement;->buffer:[B
+
+    sget v3, Lcom/benchmarks/patrik/benchmarks/java/ReverseComplement;->end:I
+
+    add-int/lit8 v3, v3, -0x1
+
+    aget-byte v2, v2, v3
+
+    if-ne v2, v7, :cond_4f
+
+    sget v2, Lcom/benchmarks/patrik/benchmarks/java/ReverseComplement;->end:I
+
+    add-int/lit8 v2, v2, -0x1
+
+    sput v2, Lcom/benchmarks/patrik/benchmarks/java/ReverseComplement;->end:I
+
+    goto :goto_38
+
+    .line 48
+    :cond_4f
+    sget v2, Lcom/benchmarks/patrik/benchmarks/java/ReverseComplement;->end:I
+
+    sget v3, Lcom/benchmarks/patrik/benchmarks/java/ReverseComplement;->start:I
+
+    if-le v2, v3, :cond_3
+
+    .line 49
+    const/4 v1, 0x1
+
+    .line 60
+    :cond_56
+    return v1
+
+    .line 51
+    :cond_57
+    sget v2, Lcom/benchmarks/patrik/benchmarks/java/ReverseComplement;->pos:I
+
+    if-lez v2, :cond_8e
+
+    sget v2, Lcom/benchmarks/patrik/benchmarks/java/ReverseComplement;->limit:I
+
+    sget v3, Lcom/benchmarks/patrik/benchmarks/java/ReverseComplement;->pos:I
+
+    if-le v2, v3, :cond_8e
+
+    .line 52
+    sget v2, Lcom/benchmarks/patrik/benchmarks/java/ReverseComplement;->limit:I
+
+    sget v3, Lcom/benchmarks/patrik/benchmarks/java/ReverseComplement;->pos:I
+
+    sub-int/2addr v2, v3
+
+    sput v2, Lcom/benchmarks/patrik/benchmarks/java/ReverseComplement;->limit:I
+
+    .line 53
+    sget-object v2, Lcom/benchmarks/patrik/benchmarks/java/ReverseComplement;->buffer:[B
+
+    sget v3, Lcom/benchmarks/patrik/benchmarks/java/ReverseComplement;->pos:I
+
+    sget-object v4, Lcom/benchmarks/patrik/benchmarks/java/ReverseComplement;->buffer:[B
+
+    sget v5, Lcom/benchmarks/patrik/benchmarks/java/ReverseComplement;->limit:I
+
+    invoke-static {v2, v3, v4, v1, v5}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+
+    .line 54
+    sput v1, Lcom/benchmarks/patrik/benchmarks/java/ReverseComplement;->pos:I
+
+    .line 58
+    :goto_75
+    sget-object v2, Lcom/benchmarks/patrik/benchmarks/java/ReverseComplement;->in:Ljava/io/InputStream;
+
+    sget-object v3, Lcom/benchmarks/patrik/benchmarks/java/ReverseComplement;->buffer:[B
+
+    sget v4, Lcom/benchmarks/patrik/benchmarks/java/ReverseComplement;->limit:I
+
+    sget-object v5, Lcom/benchmarks/patrik/benchmarks/java/ReverseComplement;->buffer:[B
+
+    array-length v5, v5
+
+    sget v6, Lcom/benchmarks/patrik/benchmarks/java/ReverseComplement;->limit:I
+
+    sub-int/2addr v5, v6
+
+    invoke-virtual {v2, v3, v4, v5}, Ljava/io/InputStream;->read([BII)I
+
+    move-result v0
+
+    .line 59
+    if-ltz v0, :cond_56
+
+    .line 61
+    sget v2, Lcom/benchmarks/patrik/benchmarks/java/ReverseComplement;->limit:I
+
+    add-int/2addr v2, v0
+
+    sput v2, Lcom/benchmarks/patrik/benchmarks/java/ReverseComplement;->limit:I
+
+    goto/16 :goto_3
+
+    .line 56
+    :cond_8e
+    sput v1, Lcom/benchmarks/patrik/benchmarks/java/ReverseComplement;->limit:I
+
+    sput v1, Lcom/benchmarks/patrik/benchmarks/java/ReverseComplement;->pos:I
+
+    goto :goto_75
+.end method
+
+.method static prepareWrite(I)V
+    .registers 3
+    .param p0, "len"    # I
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/Exception;
+        }
+    .end annotation
+
+    .prologue
+    .line 78
+    sget v0, Lcom/benchmarks/patrik/benchmarks/java/ReverseComplement;->outputPos:I
+
+    add-int/2addr v0, p0
+
+    sget-object v1, Lcom/benchmarks/patrik/benchmarks/java/ReverseComplement;->outputBuffer:[B
+
+    array-length v1, v1
+
+    if-le v0, v1, :cond_b
+
+    .line 79
+    invoke-static {}, Lcom/benchmarks/patrik/benchmarks/java/ReverseComplement;->flushData()V
+
+    .line 80
+    :cond_b
+    return-void
+.end method
+
+.method static resetData()V
+    .registers 1
+
+    .prologue
+    const/4 v0, 0x0
+
+    .line 105
+    sput v0, Lcom/benchmarks/patrik/benchmarks/java/ReverseComplement;->LINE_WIDTH:I
+
+    .line 106
+    sput v0, Lcom/benchmarks/patrik/benchmarks/java/ReverseComplement;->size:I
+
+    .line 107
+    return-void
+.end method
+
+.method static solve(Ljava/io/InputStream;)V
+    .registers 5
+    .param p0, "ins"    # Ljava/io/InputStream;
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/Exception;
+        }
+    .end annotation
+
+    .prologue
+    const/4 v0, 0x0
+
+    .line 123
+    sput-object p0, Lcom/benchmarks/patrik/benchmarks/java/ReverseComplement;->in:Ljava/io/InputStream;
+
+    .line 124
+    sput v0, Lcom/benchmarks/patrik/benchmarks/java/ReverseComplement;->limit:I
+
+    sput v0, Lcom/benchmarks/patrik/benchmarks/java/ReverseComplement;->pos:I
+
+    .line 125
+    sput v0, Lcom/benchmarks/patrik/benchmarks/java/ReverseComplement;->outputPos:I
+
+    .line 126
+    invoke-static {}, Lcom/benchmarks/patrik/benchmarks/java/ReverseComplement;->resetData()V
+
+    .line 127
+    :goto_c
+    invoke-static {}, Lcom/benchmarks/patrik/benchmarks/java/ReverseComplement;->nextLine()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_30
+
+    .line 128
+    sget-object v0, Lcom/benchmarks/patrik/benchmarks/java/ReverseComplement;->buffer:[B
+
+    sget v1, Lcom/benchmarks/patrik/benchmarks/java/ReverseComplement;->start:I
+
+    aget-byte v0, v0, v1
+
+    const/16 v1, 0x3e
+
+    if-ne v0, v1, :cond_2c
+
+    .line 129
+    invoke-static {}, Lcom/benchmarks/patrik/benchmarks/java/ReverseComplement;->finishData()V
+
+    .line 130
+    sget-object v0, Lcom/benchmarks/patrik/benchmarks/java/ReverseComplement;->buffer:[B
+
+    sget v1, Lcom/benchmarks/patrik/benchmarks/java/ReverseComplement;->start:I
+
+    sget v2, Lcom/benchmarks/patrik/benchmarks/java/ReverseComplement;->pos:I
+
+    sget v3, Lcom/benchmarks/patrik/benchmarks/java/ReverseComplement;->start:I
+
+    sub-int/2addr v2, v3
+
+    invoke-static {v0, v1, v2}, Lcom/benchmarks/patrik/benchmarks/java/ReverseComplement;->write([BII)V
+
+    goto :goto_c
+
+    .line 132
+    :cond_2c
+    invoke-static {}, Lcom/benchmarks/patrik/benchmarks/java/ReverseComplement;->appendLine()V
+
+    goto :goto_c
+
+    .line 135
+    :cond_30
+    invoke-static {}, Lcom/benchmarks/patrik/benchmarks/java/ReverseComplement;->finishData()V
+
+    .line 136
+    sget v0, Lcom/benchmarks/patrik/benchmarks/java/ReverseComplement;->outputPos:I
+
+    if-lez v0, :cond_3a
+
+    invoke-static {}, Lcom/benchmarks/patrik/benchmarks/java/ReverseComplement;->flushData()V
+
+    .line 137
+    :cond_3a
+    sget-object v0, Ljava/lang/System;->out:Ljava/io/PrintStream;
+
+    invoke-virtual {v0}, Ljava/io/PrintStream;->flush()V
+
+    .line 138
+    return-void
+.end method
+
+.method static write(I)V
+    .registers 4
+    .param p0, "b"    # I
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/Exception;
+        }
+    .end annotation
+
+    .prologue
+    .line 83
+    sget-object v0, Lcom/benchmarks/patrik/benchmarks/java/ReverseComplement;->outputBuffer:[B
+
+    sget v1, Lcom/benchmarks/patrik/benchmarks/java/ReverseComplement;->outputPos:I
+
+    add-int/lit8 v2, v1, 0x1
+
+    sput v2, Lcom/benchmarks/patrik/benchmarks/java/ReverseComplement;->outputPos:I
+
+    int-to-byte v2, p0
+
+    aput-byte v2, v0, v1
+
+    .line 84
+    return-void
+.end method
+
+.method static write([BII)V
+    .registers 5
+    .param p0, "b"    # [B
+    .param p1, "off"    # I
+    .param p2, "len"    # I
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/Exception;
+        }
+    .end annotation
+
+    .prologue
+    .line 87
+    invoke-static {p2}, Lcom/benchmarks/patrik/benchmarks/java/ReverseComplement;->prepareWrite(I)V
+
+    .line 88
+    sget-object v0, Lcom/benchmarks/patrik/benchmarks/java/ReverseComplement;->outputBuffer:[B
+
+    sget v1, Lcom/benchmarks/patrik/benchmarks/java/ReverseComplement;->outputPos:I
+
+    invoke-static {p0, p1, v0, v1, p2}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+
+    .line 89
+    sget v0, Lcom/benchmarks/patrik/benchmarks/java/ReverseComplement;->outputPos:I
+
+    add-int/2addr v0, p2
+
+    sput v0, Lcom/benchmarks/patrik/benchmarks/java/ReverseComplement;->outputPos:I
+
+    .line 90
+    return-void
+.end method
+
+
+# virtual methods
+.method public runBenchmark([Ljava/lang/String;)V
+    .registers 6
+    .param p1, "args"    # [Ljava/lang/String;
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/Exception;
+        }
+    .end annotation
+
+    .prologue
+    .line 142
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/Class;->getClassLoader()Ljava/lang/ClassLoader;
+
+    move-result-object v1
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v3, "assets/"
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    const/4 v3, 0x0
+
+    aget-object v3, p1, v3
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v1, v2}, Ljava/lang/ClassLoader;->getResourceAsStream(Ljava/lang/String;)Ljava/io/InputStream;
+
+    move-result-object v0
+
+    .line 143
+    .local v0, "is":Ljava/io/InputStream;
+    invoke-static {v0}, Lcom/benchmarks/patrik/benchmarks/java/ReverseComplement;->solve(Ljava/io/InputStream;)V
+
+    .line 144
+    return-void
+.end method
+
