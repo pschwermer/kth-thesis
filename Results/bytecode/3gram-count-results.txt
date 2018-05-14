@@ -1,0 +1,14 @@
+Benchmark, Unique 3-gram (per implementation, total for benchmark, total for all), Total 3-gram 
+java-fasta, 129/27.27272727272727/9.280575539568344, 185 
+kotlin-converted-fasta, 196/41.43763213530655/14.100719424460431, 334 
+kotlin-idiomatic-fasta, 227/47.99154334038055/16.33093525179856, 462 
+java-fannkuch-redux, 74/46.25/5.323741007194244, 88 
+kotlin-converted-fannkuch-redux, 77/48.125/5.53956834532374, 89 
+kotlin-idiomatic-fannkuch-redux, 116/72.5/8.345323741007196, 138 
+java-n-body, 145/36.340852130325814/10.431654676258994, 434 
+kotlin-converted-n-body, 173/43.35839598997494/12.446043165467625, 522 
+kotlin-idiomatic-n-body, 231/57.89473684210527/16.618705035971225, 653 
+java-reverse-complement, 189/40.471092077087796/13.597122302158274, 241 
+kotlin-converted-reverse-complement, 188/40.25695931477516/13.525179856115107, 548 
+kotlin-idiomatic-reverse-complement, 140/29.978586723768736/10.071942446043165, 172 
+
